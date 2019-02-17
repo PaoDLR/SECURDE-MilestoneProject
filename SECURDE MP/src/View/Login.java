@@ -101,8 +101,12 @@ public class Login extends javax.swing.JPanel {
 //        System.out.println("IN LOGIN");
 //        System.out.println("Username: " + username);
 //        System.out.println("Password: " + password);
+
+        if (!(username.contains("<script>") || password.contains("<script>")))
+            frame.mainNav(username, password);
+        else 
+            System.out.println("No scripts allowed!");
         
-        frame.mainNav(username, password);
         jTextField1.setText("");
         jPasswordField1.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed

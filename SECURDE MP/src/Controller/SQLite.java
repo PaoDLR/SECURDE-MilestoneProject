@@ -70,34 +70,34 @@ public class SQLite {
     
     public void addUser(String username, String password) {
         
-        password = passwordUtils.encryptThisString(password);
+            password = passwordUtils.encryptThisString(password);
 
-        String sql = "INSERT INTO users(username,password) VALUES('" + username + "','" + password + "')";
-        
-        try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            
-//  For this activity, we would not be using prepared statements first.
-//      String sql = "INSERT INTO users(username,password) VALUES(?,?)";
-//      PreparedStatement pstmt = conn.prepareStatement(sql)) {
-//      pstmt.setString(1, username);
-//      pstmt.setString(2, password);
-//      pstmt.executeUpdate();
-        } catch (Exception ex) {}
+            String sql = "INSERT INTO users(username,password) VALUES('" + username + "','" + password + "')";
+
+            try (Connection conn = DriverManager.getConnection(driverURL);
+                Statement stmt = conn.createStatement()){
+                stmt.execute(sql);
+
+            //  For this activity, we would not be using prepared statements first.
+            //      String sql = "INSERT INTO users(username,password) VALUES(?,?)";
+            //      PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            //      pstmt.setString(1, username);
+            //      pstmt.setString(2, password);
+            //      pstmt.executeUpdate();
+            } catch (Exception ex) {} 
     }
     
     public void addUser(String username, String password, int role) {
-        
-        password = passwordUtils.encryptThisString(password);
-        
-        String sql = "INSERT INTO users(username,password,role) VALUES('" + username + "','" + password + "','" + role + "')";
-        
-        try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
-            
-        } catch (Exception ex) {}
+    
+                password = passwordUtils.encryptThisString(password);
+
+                String sql = "INSERT INTO users(username,password,role) VALUES('" + username + "','" + password + "','" + role + "')";
+
+                try (Connection conn = DriverManager.getConnection(driverURL);
+                    Statement stmt = conn.createStatement()){
+                    stmt.execute(sql);
+
+                } catch (Exception ex) {}    
     }
     
     
@@ -111,8 +111,9 @@ public class SQLite {
         } catch (Exception ex) {}
     }
     
-    public boolean loginUser (String username, String password) {
+    public User loginUser (String username, String password) {
         boolean login = false;
+        User user = null;
         
         String sql = "SELECT id, username, password, role FROM users";
         ArrayList<User> users = new ArrayList<User>();
@@ -135,6 +136,7 @@ public class SQLite {
                 System.out.println("Found");
                 System.out.println(users.get(i).getUsername());
                 System.out.println(users.get(i).getPassword());
+                user = users.get(i);
                 if (passwordUtils.encryptThisString(password).equals(users.get(i).getPassword())){
                     login = true;
                     break;
@@ -144,7 +146,7 @@ public class SQLite {
         
         System.out.println("loginUser: " + login);
         
-        return login;
+        return user;
         
     }
     
@@ -161,10 +163,20 @@ public class SQLite {
         }
         
         if (!found){
-            hash = passwordUtils.encryptThisString(password);
-            this.addUser(username, hash, 2);
-            System.out.println(username + " has been added to the system.");
-        }
+            if (passwordUtils.bContainsSpecialCharacter(password)){
+                if (passwordUtils.bCheckString(password)){
+            
+                hash = passwordUtils.encryptThisString(password);
+                this.addUser(username, hash, 2);
+                System.out.println(username + " has been added to the system.");
+                
+                }//checkString
+                else
+                    System.out.println("Password must contain at least one capital letter and one number");
+            }//special
+            else
+                System.out.println("Password must contain at least one special character.");
+        }//found
         else
             System.out.println("This user already exists.");
         

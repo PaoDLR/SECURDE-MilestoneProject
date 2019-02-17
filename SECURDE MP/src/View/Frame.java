@@ -1,6 +1,7 @@
 package View;
 
 import Controller.Main;
+import Model.User;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Dimension;
@@ -239,12 +240,38 @@ public class Frame extends javax.swing.JFrame {
         System.out.println(username);
         System.out.println(password);
         
-        boolean login = main.sqlite.loginUser(username, password);
+        User login = main.sqlite.loginUser(username, password);
+        
+        adminBtn.setVisible(false);
+        managerBtn.setVisible(false);
+        clientBtn.setVisible(false);
+        staffBtn.setVisible(false);
               
-        if (login){
+        if (login != null){
             System.out.println("FRAME: LOGIN: TRUE");
             frameView.show(Container, "homePnl");
-            adminBtn.setVisible(false);
+            
+            int role = login.getRole();
+            
+            switch(role) {
+                case 1: 
+                    break;
+                case 2: clientBtn.setVisible(true);
+                        contentView.show(Content, "clientHomePnl");
+                    break;
+                case 3: staffBtn.setVisible(true);
+                        contentView.show(Content, "staffHomePnl");
+                    break;
+                case 4: managerBtn.setVisible(true);
+                        contentView.show(Content, "managerHomePnl");
+                    break;
+                case 5: adminBtn.setVisible(true);
+                        contentView.show(Content, "adminHomePnl");
+                    break;
+                default:
+            }
+            
+            
         }
         else
             System.out.println("FRAME: LOGIN: FALSE");

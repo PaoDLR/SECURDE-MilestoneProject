@@ -2,7 +2,9 @@ package Controller;
 
 import java.math.BigInteger; 
 import java.security.MessageDigest; 
-import java.security.NoSuchAlgorithmException; 
+import java.security.NoSuchAlgorithmException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
   
 public class PasswordUtils { 
     
@@ -35,6 +37,46 @@ public class PasswordUtils {
         catch (NoSuchAlgorithmException e) { 
             throw new RuntimeException(e); 
         } 
+    }
+    
+    public boolean bContainsSpecialCharacter(String s) {
+        
+         if (s == null || s.trim().isEmpty()) {
+             System.out.println("Incorrect format of string");
+             return false;
+         }
+         
+         Pattern p = Pattern.compile("[^A-Za-z0-9]");
+         Matcher m = p.matcher(s);
+        
+         boolean b = m.find();
+         
+         return b;
+         
+     }
+    
+    public static boolean bCheckString (String str) {
+        
+        char ch;
+        boolean capitalFlag = false;
+        boolean lowerCaseFlag = false;
+        boolean numberFlag = false;
+        
+        for(int i=0;i < str.length();i++) {
+            ch = str.charAt(i);
+            
+            if( Character.isDigit(ch)) {
+                numberFlag = true;
+            }
+            else if (Character.isUpperCase(ch)) {
+                capitalFlag = true;
+            } else if (Character.isLowerCase(ch)) {
+                lowerCaseFlag = true;
+            }
+            if(numberFlag && capitalFlag && lowerCaseFlag)
+                return true;
+        }
+        return false;
     }
     
 }
