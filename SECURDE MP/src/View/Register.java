@@ -122,6 +122,9 @@ public class Register extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         frame.registerAction(username.getText(), new String(password.getPassword()), new String(confirmPassword.getPassword()));
         frame.loginNav();
+        username.setText("");
+        password.setText("");
+        confirmPassword.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

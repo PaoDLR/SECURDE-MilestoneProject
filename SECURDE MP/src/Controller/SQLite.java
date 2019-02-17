@@ -131,7 +131,7 @@ public class SQLite {
         } catch (Exception ex) {}
         
         for (int i=0;i<users.size();i++){
-            if (users.get(i).getUsername().equals(username)){
+            if (users.get(i).getUsername().toLowerCase().equals(username.toLowerCase())){
                 System.out.println("Found");
                 System.out.println(users.get(i).getUsername());
                 System.out.println(users.get(i).getPassword());
@@ -148,4 +148,25 @@ public class SQLite {
         
     }
     
+    public void registerUser (String username, String password) {
+        ArrayList<User> users = this.getUsers();
+        boolean found = false;
+        String hash = "";
+        
+        for (int i=0;i<users.size();i++){
+            if (users.get(i).getUsername().toLowerCase().equals(username.toLowerCase())){
+                found = true;
+                break;
+            }
+        }
+        
+        if (!found){
+            hash = passwordUtils.encryptThisString(password);
+            this.addUser(username, hash, 2);
+            System.out.println(username + " has been added to the system.");
+        }
+        else
+            System.out.println("This user already exists.");
+        
+    }    
 }

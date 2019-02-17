@@ -244,6 +244,7 @@ public class Frame extends javax.swing.JFrame {
         if (login){
             System.out.println("FRAME: LOGIN: TRUE");
             frameView.show(Container, "homePnl");
+            adminBtn.setVisible(false);
         }
         else
             System.out.println("FRAME: LOGIN: FALSE");
@@ -259,7 +260,12 @@ public class Frame extends javax.swing.JFrame {
     }
     
     public void registerAction(String username, String password, String confpass){
-        main.sqlite.addUser(username, password);
+        
+        if (password.equals(confpass))
+            main.sqlite.registerUser(username, password);
+        else
+            System.out.println("Passwords do not match.");
+//        main.sqlite.addUser(username, password);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

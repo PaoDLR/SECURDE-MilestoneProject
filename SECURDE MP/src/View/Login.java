@@ -98,11 +98,13 @@ public class Login extends javax.swing.JPanel {
         String username = jTextField1.getText().toString();
         String password = new String(jPasswordField1.getPassword());
         
-        System.out.println("IN LOGIN");
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + password);
+//        System.out.println("IN LOGIN");
+//        System.out.println("Username: " + username);
+//        System.out.println("Password: " + password);
         
         frame.mainNav(username, password);
+        jTextField1.setText("");
+        jPasswordField1.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
