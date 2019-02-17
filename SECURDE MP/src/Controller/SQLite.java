@@ -84,7 +84,15 @@ public class SQLite {
             //      pstmt.setString(1, username);
             //      pstmt.setString(2, password);
             //      pstmt.executeUpdate();
-            } catch (Exception ex) {} 
+            } catch (Exception ex) {}
+            
+        ArrayList<User> users = getUsers();
+        for(int nCtr = 0; nCtr < users.size(); nCtr++){
+            System.out.println("===== User " + users.get(nCtr).getId() + " =====");
+            System.out.println(" Username: " + users.get(nCtr).getUsername());
+            System.out.println(" Password: " + users.get(nCtr).getPassword());
+            System.out.println(" Role: " + users.get(nCtr).getRole());
+        }
     }
     
     public void addUser(String username, String password, int role) {
@@ -97,7 +105,15 @@ public class SQLite {
                     Statement stmt = conn.createStatement()){
                     stmt.execute(sql);
 
-                } catch (Exception ex) {}    
+                } catch (Exception ex) {}
+                
+        ArrayList<User> users = getUsers();
+        for(int nCtr = 0; nCtr < users.size(); nCtr++){
+            System.out.println("===== User " + users.get(nCtr).getId() + " =====");
+            System.out.println(" Username: " + users.get(nCtr).getUsername());
+            System.out.println(" Password: " + users.get(nCtr).getPassword());
+            System.out.println(" Role: " + users.get(nCtr).getRole());
+        }
     }
     
     
@@ -143,6 +159,9 @@ public class SQLite {
                 }
             }
         }
+        
+        if (!login)
+            user = null;
         
         System.out.println("loginUser: " + login);
         
