@@ -62,20 +62,26 @@ public class PasswordUtils {
         boolean lowerCaseFlag = false;
         boolean numberFlag = false;
         
-        for(int i=0;i < str.length();i++) {
-            ch = str.charAt(i);
-            
-            if( Character.isDigit(ch)) {
-                numberFlag = true;
+        if (str.length() >= 8) {
+        
+            for(int i=0;i < str.length();i++) {
+                ch = str.charAt(i);
+
+                if( Character.isDigit(ch)) {
+                    numberFlag = true;
+                }
+                else if (Character.isUpperCase(ch)) {
+                    capitalFlag = true;
+                } else if (Character.isLowerCase(ch)) {
+                    lowerCaseFlag = true;
+                }
+                if(numberFlag && capitalFlag && lowerCaseFlag)
+                    return true;
             }
-            else if (Character.isUpperCase(ch)) {
-                capitalFlag = true;
-            } else if (Character.isLowerCase(ch)) {
-                lowerCaseFlag = true;
-            }
-            if(numberFlag && capitalFlag && lowerCaseFlag)
-                return true;
         }
+        else
+            System.out.println("Password should be 8 characters long or more.");
+        
         return false;
     }
     

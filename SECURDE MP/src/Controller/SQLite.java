@@ -86,13 +86,6 @@ public class SQLite {
             //      pstmt.executeUpdate();
             } catch (Exception ex) {}
             
-        ArrayList<User> users = getUsers();
-        for(int nCtr = 0; nCtr < users.size(); nCtr++){
-            System.out.println("===== User " + users.get(nCtr).getId() + " =====");
-            System.out.println(" Username: " + users.get(nCtr).getUsername());
-            System.out.println(" Password: " + users.get(nCtr).getPassword());
-            System.out.println(" Role: " + users.get(nCtr).getRole());
-        }
     }
     
     public void addUser(String username, String password, int role) {
@@ -107,13 +100,6 @@ public class SQLite {
 
                 } catch (Exception ex) {}
                 
-        ArrayList<User> users = getUsers();
-        for(int nCtr = 0; nCtr < users.size(); nCtr++){
-            System.out.println("===== User " + users.get(nCtr).getId() + " =====");
-            System.out.println(" Username: " + users.get(nCtr).getUsername());
-            System.out.println(" Password: " + users.get(nCtr).getPassword());
-            System.out.println(" Role: " + users.get(nCtr).getRole());
-        }
     }
     
     
@@ -132,35 +118,40 @@ public class SQLite {
         User user = null;
         
         String sql = "SELECT id, username, password, role FROM users";
-        ArrayList<User> users = new ArrayList<User>();
+        ArrayList<User> users = getUsers();
         
-        try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
-            
-            while (rs.next()) {
-                users.add(new User(rs.getInt("id"),
-                                   rs.getString("username"),
-                                   rs.getString("password"),
-                                   rs.getInt("role")));
-            
-            }
-        } catch (Exception ex) {}
-        
+//        try (Connection conn = DriverManager.getConnection(driverURL);
+//            Statement stmt = conn.createStatement();
+//            ResultSet rs = stmt.executeQuery(sql)){
+//            
+//            while (rs.next()) {
+//                users.add(new User(rs.getInt("id"),
+//                                   rs.getString("username"),
+//                                   rs.getString("password"),
+//                                   rs.getInt("role")));
+//            
+//            }
+//        } catch (Exception ex) {}
+       
+
         for (int i=0;i<users.size();i++){
             if (users.get(i).getUsername().toLowerCase().equals(username.toLowerCase())){
                 System.out.println("Found");
-                System.out.println(users.get(i).getUsername());
-                System.out.println(users.get(i).getPassword());
+                System.out.println("Username: " + users.get(i).getUsername());
+                System.out.println("Hashed Password: " + users.get(i).getPassword());
+                System.out.println("Plain Password: " + password);
+                System.out.println("Plain Password Hashed: " + passwordUtils.encryptThisString(password));
+                
                 user = users.get(i);
-                if (passwordUtils.encryptThisString(password).equals(users.get(i).getPassword())){
+                
+                if (passwordUtils.encryptThisString(password).equals(user.getPassword())){
                     login = true;
                     break;
                 }
             }
         }
         
-        if (!login)
+        if (login == false)
             user = null;
         
         System.out.println("loginUser: " + login);
@@ -185,9 +176,17 @@ public class SQLite {
             if (passwordUtils.bContainsSpecialCharacter(password)){
                 if (passwordUtils.bCheckString(password)){
             
-                hash = passwordUtils.encryptThisString(password);
-                this.addUser(username, hash, 2);
+//                hash = passwordUtils.encryptThisString(password);
+                this.addUser(username, password, 2);
                 System.out.println(username + " has been added to the system.");
+                
+                ArrayList<User> users2 = getUsers();
+                for(int nCtr = 0; nCtr < users2.size(); nCtr++){
+                    System.out.println("===== User " + users2.get(nCtr).getId() + " =====");
+                    System.out.println(" Username: " + users2.get(nCtr).getUsername());
+                    System.out.println(" Password: " + users2.get(nCtr).getPassword());
+                    System.out.println(" Role: " + users2.get(nCtr).getRole());
+                }
                 
                 }//checkString
                 else
