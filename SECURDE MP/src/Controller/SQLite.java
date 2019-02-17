@@ -69,13 +69,6 @@ public class SQLite {
     }
     
     public void addUser(String username, String password) {
-        try {
-            password = passwordUtils.getSaltedHash(password);
-            
-        } catch (Exception ex) {
-            Logger.getLogger(SQLite.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
         String sql = "INSERT INTO users(username,password) VALUES('" + username + "','" + password + "')";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -91,8 +84,10 @@ public class SQLite {
         } catch (Exception ex) {}
     }
     
-    public void addUser(String username, String password, int role) {
-        String sql = "INSERT INTO users(username,password,role) VALUES('" + username + "','" + password + "','" + role + "')";
+    public void addUser(String username, String password, int role) throws Exception {
+        
+        String salt = passwordUtils.getSaltedHash(password);
+        String sql = "INSERT INTO users(username,password,role,salt) VALUES('" + username + "','" + password + "','" + role + "','" + salt + "')";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
@@ -111,7 +106,8 @@ public class SQLite {
         } catch (Exception ex) {}
     }
     
-    public void loginUser (String username, String password) {
+    public boolean loginUser (String username, String password) {
+        boolean login = false;
         String sql = "SELECT username, password FROM users WHERE username='" + username + "');";
         ArrayList<User> users = new ArrayList<User>();
         
@@ -123,16 +119,18 @@ public class SQLite {
                 users.add(new User(rs.getInt("id"),
                                    rs.getString("username"),
                                    rs.getString("password"),
-                                   rs.getInt("role")));
-            
+                                   rs.getInt("role"))); 
             }
             
-            
-            
+            boolean verify = passwordUtils.check(password, users.get(0).getPassword());
+            System.out.println(verify);
+            if (verify)
+               login = true;
+                    
             
         } catch (Exception ex) {}
         
-        
+        return login;
         
     }
     

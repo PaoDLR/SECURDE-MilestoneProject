@@ -234,8 +234,17 @@ public class Frame extends javax.swing.JFrame {
         this.setVisible(true);
     }
     
-    public void mainNav(){
-        frameView.show(Container, "homePnl");
+    public void mainNav(String username, String password){
+        
+        System.out.println("MAIN NAV: " + main.sqlite.loginUser(username, password));
+        
+//        if (main.sqlite.loginUser(username, password)){
+//            System.out.println("FRAME: LOGIN: TRUE");
+//            frameView.show(Container, "homePnl");
+//        }
+//        else
+//            System.out.println("FRAME: LOGIN: FALSE");
+        
     }
     
     public void loginNav(){
