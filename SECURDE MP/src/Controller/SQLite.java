@@ -69,6 +69,9 @@ public class SQLite {
     }
     
     public void addUser(String username, String password) {
+        
+        password = passwordUtils.encryptThisString(password);
+
         String sql = "INSERT INTO users(username,password) VALUES('" + username + "','" + password + "')";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -84,10 +87,11 @@ public class SQLite {
         } catch (Exception ex) {}
     }
     
-    public void addUser(String username, String password, int role) throws Exception {
+    public void addUser(String username, String password, int role) {
         
-        String salt = passwordUtils.getSaltedHash(password);
-        String sql = "INSERT INTO users(username,password,role,salt) VALUES('" + username + "','" + password + "','" + role + "','" + salt + "')";
+        password = passwordUtils.encryptThisString(password);
+        
+        String sql = "INSERT INTO users(username,password,role) VALUES('" + username + "','" + password + "','" + role + "')";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
@@ -95,6 +99,7 @@ public class SQLite {
             
         } catch (Exception ex) {}
     }
+    
     
     public void removeUser(String username) {
         String sql = "DELETE FROM users WHERE username='" + username + "');";
@@ -108,7 +113,8 @@ public class SQLite {
     
     public boolean loginUser (String username, String password) {
         boolean login = false;
-        String sql = "SELECT username, password FROM users WHERE username='" + username + "');";
+        
+        String sql = "SELECT id, username, password, role FROM users";
         ArrayList<User> users = new ArrayList<User>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -119,16 +125,24 @@ public class SQLite {
                 users.add(new User(rs.getInt("id"),
                                    rs.getString("username"),
                                    rs.getString("password"),
-                                   rs.getInt("role"))); 
+                                   rs.getInt("role")));
+            
             }
-            
-            boolean verify = passwordUtils.check(password, users.get(0).getPassword());
-            System.out.println(verify);
-            if (verify)
-               login = true;
-                    
-            
         } catch (Exception ex) {}
+        
+        for (int i=0;i<users.size();i++){
+            if (users.get(i).getUsername().equals(username)){
+                System.out.println("Found");
+                System.out.println(users.get(i).getUsername());
+                System.out.println(users.get(i).getPassword());
+                if (passwordUtils.encryptThisString(password).equals(users.get(i).getPassword())){
+                    login = true;
+                    break;
+                }
+            }
+        }
+        
+        System.out.println("loginUser: " + login);
         
         return login;
         

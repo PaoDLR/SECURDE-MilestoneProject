@@ -236,14 +236,17 @@ public class Frame extends javax.swing.JFrame {
     
     public void mainNav(String username, String password){
         
-        System.out.println("MAIN NAV: " + main.sqlite.loginUser(username, password));
+        System.out.println(username);
+        System.out.println(password);
         
-//        if (main.sqlite.loginUser(username, password)){
-//            System.out.println("FRAME: LOGIN: TRUE");
-//            frameView.show(Container, "homePnl");
-//        }
-//        else
-//            System.out.println("FRAME: LOGIN: FALSE");
+        boolean login = main.sqlite.loginUser(username, password);
+              
+        if (login){
+            System.out.println("FRAME: LOGIN: TRUE");
+            frameView.show(Container, "homePnl");
+        }
+        else
+            System.out.println("FRAME: LOGIN: FALSE");
         
     }
     

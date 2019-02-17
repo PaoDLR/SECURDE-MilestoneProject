@@ -5,7 +5,7 @@ public class User {
     private String username;
     private String password;
     private int role;
-    private String salt;
+    
 
     public User(String username, String password){
         this.username = username;
@@ -17,13 +17,6 @@ public class User {
         this.username = username;
         this.password = password;
         this.role = role;
-    }
-    
-    public User(String username, String password, int role, String salt){
-        this.username = username;
-        this.password = password;
-        this.role = role;
-        this.salt = salt;
     }
     
     public int getId() {
@@ -57,14 +50,5 @@ public class User {
     public void setRole(int role) {
         this.role = role;
     }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-    
     
 }
