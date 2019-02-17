@@ -7,10 +7,13 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SQLite {
     
     String driverURL = "jdbc:sqlite:" + "database.db";
+    private PasswordUtils passwordUtils = new PasswordUtils();
     
     public void createNewDatabase() {
         try (Connection conn = DriverManager.getConnection(driverURL)) {
@@ -66,6 +69,13 @@ public class SQLite {
     }
     
     public void addUser(String username, String password) {
+        try {
+            password = passwordUtils.getSaltedHash(password);
+            
+        } catch (Exception ex) {
+            Logger.getLogger(SQLite.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         String sql = "INSERT INTO users(username,password) VALUES('" + username + "','" + password + "')";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -99,6 +109,31 @@ public class SQLite {
             stmt.execute(sql);
             System.out.println("User " + username + " has been deleted.");
         } catch (Exception ex) {}
+    }
+    
+    public void loginUser (String username, String password) {
+        String sql = "SELECT username, password FROM users WHERE username='" + username + "');";
+        ArrayList<User> users = new ArrayList<User>();
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+            
+            while (rs.next()) {
+                users.add(new User(rs.getInt("id"),
+                                   rs.getString("username"),
+                                   rs.getString("password"),
+                                   rs.getInt("role")));
+            
+            }
+            
+            
+            
+            
+        } catch (Exception ex) {}
+        
+        
+        
     }
     
 }
