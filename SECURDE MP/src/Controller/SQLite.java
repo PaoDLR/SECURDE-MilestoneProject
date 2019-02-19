@@ -116,9 +116,16 @@ public class SQLite {
     public User loginUser (String username, String password) {
         boolean login = false;
         User user = null;
+        ArrayList<User> users = null;
         
-        String sql = "SELECT id, username, password, role FROM users";
-        ArrayList<User> users = getUsers();
+        
+        if (!(username.contains("SELECT") || username.contains("INSERT") 
+                || username.contains(";") || username.contains("--") || username.contains("++")))
+            if (!(password.contains("SELECT") || password.contains("INSERT") 
+                || password.contains(";") || password.contains("--") || password.contains("++"))){
+        
+        
+            users = getUsers();
         
 //        try (Connection conn = DriverManager.getConnection(driverURL);
 //            Statement stmt = conn.createStatement();
@@ -134,19 +141,20 @@ public class SQLite {
 //        } catch (Exception ex) {}
        
 
-        for (int i=0;i<users.size();i++){
-            if (users.get(i).getUsername().toLowerCase().equals(username.toLowerCase())){
-                System.out.println("Found");
-                System.out.println("Username: " + users.get(i).getUsername());
-                System.out.println("Hashed Password: " + users.get(i).getPassword());
-                System.out.println("Plain Password: " + password);
-                System.out.println("Plain Password Hashed: " + passwordUtils.encryptThisString(password));
-                
-                user = users.get(i);
-                
-                if (passwordUtils.encryptThisString(password).equals(user.getPassword())){
-                    login = true;
-                    break;
+            for (int i=0;i<users.size();i++){
+                if (users.get(i).getUsername().toLowerCase().equals(username.toLowerCase())){
+                    System.out.println("Found");
+                    System.out.println("Username: " + users.get(i).getUsername());
+                    System.out.println("Hashed Password: " + users.get(i).getPassword());
+                    System.out.println("Plain Password: " + password);
+                    System.out.println("Plain Password Hashed: " + passwordUtils.encryptThisString(password));
+
+                    user = users.get(i);
+
+                    if (passwordUtils.encryptThisString(password).equals(user.getPassword())){
+                        login = true;
+                        break;
+                    }
                 }
             }
         }
