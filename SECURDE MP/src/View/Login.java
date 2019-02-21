@@ -138,7 +138,7 @@ public class Login extends javax.swing.JPanel {
             lock--;
         }
         
-        
+        jPasswordField1.setText("");
         
 //        jTextField1.setText("");
 //        jPasswordField1.setText("");
