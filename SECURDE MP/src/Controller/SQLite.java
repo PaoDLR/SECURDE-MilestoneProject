@@ -14,6 +14,7 @@ public class SQLite {
     
     String driverURL = "jdbc:sqlite:" + "database.db";
     private PasswordUtils passwordUtils = new PasswordUtils();
+    private int lock = 0;
     
     public void createNewDatabase() {
         try (Connection conn = DriverManager.getConnection(driverURL)) {
@@ -29,8 +30,7 @@ public class SQLite {
             + " id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
             + " username TEXT NOT NULL,\n"
             + " password TEXT NOT NULL,\n"
-            + " role INTEGER DEFAULT 2,\n"
-            + " tries INTEGER DEFAULT 0\n"
+            + " role INTEGER DEFAULT 2\n"
             + ");";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -94,7 +94,7 @@ public class SQLite {
     
                 password = passwordUtils.encryptThisString(password);
 
-                String sql = "INSERT INTO users(username,password,role,tries) VALUES('" + username + "','" + password + "','" + role + "',0)";
+                String sql = "INSERT INTO users(username,password,role) VALUES('" + username + "','" + password + "','" + role + "')";
 
                 try (Connection conn = DriverManager.getConnection(driverURL);
                     Statement stmt = conn.createStatement()){
@@ -119,10 +119,7 @@ public class SQLite {
         boolean login = false;
         User user = null;
         ArrayList<User> users = null;
-        String sql;
         
-        int tries;
-        int index;
  
         
         if (!(username.contains("SELECT") || username.contains("INSERT") 
@@ -156,53 +153,19 @@ public class SQLite {
                     System.out.println("Plain Password Hashed: " + passwordUtils.encryptThisString(password));
 
                     user = users.get(i);
-                    index = i;
+                    
 
                     if (passwordUtils.encryptThisString(password).equals(user.getPassword())){
-                        if (!user.isLockout()){
                             login = true;
-                            user.setTries(0);
                             break; 
-                        }   
-                        else
-                            System.out.println("This account is locked out");
                     }
-                    else {
-                        System.out.println("User Tries: " + user.getTries());
-                        System.out.println("Failed attempts: " + user.getTries());
-                        
-                        tries = user.getTries()+1;
-                        user.setTries(tries);
-                        
-                        sql = "UPDATE 'users' SET 'tries' = " + tries + " WHERE 'username' = '" + user.getUsername() + "';";
-                        System.out.println(sql);
 
-                        try (Connection conn = DriverManager.getConnection(driverURL);
-                            Statement stmt = conn.createStatement()){
-                            stmt.executeUpdate(sql);
-                            System.out.println("Edited");
-
-                        } catch (Exception ex) {
-                            System.out.println(ex.getMessage());
-                        }
-                        
-//                        users = getUsers();
-//                        System.out.println(users.get(index).getUsername());
-//                        System.out.println(users.get(index).getTries());
-
-                        if (user.getTries() == 5){
-                            user.setLockout(true);
-                            System.out.println("This account has been locked out");
-                        }
-                        
-
-                    }
                 }
             }
         }
         
         if (login == false)
-            user = null;
+            return null;
             
         System.out.println("loginUser: " + login);
         
@@ -236,7 +199,7 @@ public class SQLite {
                     System.out.println(" Username: " + users2.get(nCtr).getUsername());
                     System.out.println(" Password: " + users2.get(nCtr).getPassword());
                     System.out.println(" Role: " + users2.get(nCtr).getRole());
-                    System.out.println(" Tries: " + users2.get(nCtr).getTries());
+
                 }
                 
                 }//checkString

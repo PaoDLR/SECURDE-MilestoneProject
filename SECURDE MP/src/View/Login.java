@@ -4,6 +4,7 @@ package View;
 public class Login extends javax.swing.JPanel {
 
     public Frame frame;
+    private int lock = 5;
     
     public Login() {
         initComponents();
@@ -117,13 +118,25 @@ public class Login extends javax.swing.JPanel {
         if (!(username.contains("<script>") || password.contains("<script>"))){
             login = frame.mainNav(username, password);
             if (!login){
+                lock--;
+                errorLabel.setText("Username or password is incorrect. Please try again. " + lock + " Attempts remaining.");
                 errorLabel.setVisible(true);
+                if (lock <= 0){
+                    jButton1.setEnabled(false);
+                    jButton2.setEnabled(false);
+                    errorLabel.setText("You have been locked out due to exceeding login attempts.");
+                }
+                    
             }             
-            else
+            else{
+                lock = 5;
                 errorLabel.setVisible(false);
+            }
         }
-        else 
+        else {
             System.out.println("No scripts allowed!");
+            lock--;
+        }
         
         
         

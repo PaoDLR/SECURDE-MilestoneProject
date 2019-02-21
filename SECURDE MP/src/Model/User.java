@@ -57,21 +57,6 @@ public class User {
         this.role = role;
     }
 
-    public boolean isLockout() {
-        return lockout;
-    }
-
-    public void setLockout(boolean lockout) {
-        this.lockout = lockout;
-    }
-
-    public int getTries() {
-        return tries;
-    }
-
-    public void setTries(int tries) {
-        this.tries = tries;
-    }
     
     
     

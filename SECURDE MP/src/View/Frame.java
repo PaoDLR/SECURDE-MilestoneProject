@@ -8,7 +8,7 @@ import java.awt.Dimension;
 import javax.swing.WindowConstants;
 
 public class Frame extends javax.swing.JFrame {
-
+    
     public Frame() {
         initComponents();
     }
