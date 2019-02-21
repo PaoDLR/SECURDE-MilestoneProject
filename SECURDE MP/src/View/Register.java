@@ -57,7 +57,6 @@ public class Register extends javax.swing.JPanel {
 
         confirmPassword.setBackground(new java.awt.Color(240, 240, 240));
         confirmPassword.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        confirmPassword.setText("confirmPassword");
         confirmPassword.setToolTipText("");
         confirmPassword.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2)), "CONFIRM PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         confirmPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
@@ -69,7 +68,6 @@ public class Register extends javax.swing.JPanel {
 
         password.setBackground(new java.awt.Color(240, 240, 240));
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        password.setText("jPasswordField1");
         password.setToolTipText("");
         password.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2)), "PASSWORD", javax.swing.border.TitledBorder.CENTER, javax.swing.border.TitledBorder.DEFAULT_POSITION));
         password.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));

@@ -42,6 +42,7 @@ public class Main {
             System.out.println(" Username: " + users.get(nCtr).getUsername());
             System.out.println(" Password: " + users.get(nCtr).getPassword());
             System.out.println(" Role: " + users.get(nCtr).getRole());
+            System.out.println(" Tries: " + users.get(nCtr).getTries());
         }
         
         // Initialize User Interface

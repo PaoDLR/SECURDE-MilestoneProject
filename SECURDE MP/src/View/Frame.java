@@ -235,7 +235,9 @@ public class Frame extends javax.swing.JFrame {
         this.setVisible(true);
     }
     
-    public void mainNav(String username, String password){
+    public boolean mainNav(String username, String password){
+        
+        boolean bLogin = false;
         
         System.out.println(username);
         System.out.println(password);
@@ -248,6 +250,7 @@ public class Frame extends javax.swing.JFrame {
         staffBtn.setVisible(false);
               
         if (login != null){
+            bLogin = true;
             System.out.println("FRAME: LOGIN: TRUE");
             frameView.show(Container, "homePnl");
             
@@ -275,6 +278,10 @@ public class Frame extends javax.swing.JFrame {
         }
         else
             System.out.println("FRAME: LOGIN: FALSE");
+        
+        return bLogin;
+        
+        
         
     }
     
