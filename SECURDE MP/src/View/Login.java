@@ -125,7 +125,7 @@ public class Login extends javax.swing.JPanel {
         else 
             System.out.println("No scripts allowed!");
         
-        
+        jPasswordField1.setText("");
         
 //        jTextField1.setText("");
 //        jPasswordField1.setText("");
