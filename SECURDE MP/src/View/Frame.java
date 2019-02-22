@@ -5,7 +5,13 @@ import Model.User;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
+import java.time.LocalDateTime;
 import javax.swing.WindowConstants;
+import java.sql.Timestamp;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Frame extends javax.swing.JFrame {
     
@@ -210,6 +216,7 @@ public class Frame extends javax.swing.JFrame {
     
     private CardLayout contentView = new CardLayout();
     private CardLayout frameView = new CardLayout();
+    private PrintStream fileOut;
     
     public void init(Main controller){
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -219,6 +226,14 @@ public class Frame extends javax.swing.JFrame {
         this.main = controller;
         loginPnl.frame = this;
         registerPnl.frame = this;
+        
+        try {
+            fileOut = new PrintStream("./out.txt");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        System.setOut(fileOut);
         
         Container.setLayout(frameView);
         Container.add(loginPnl, "loginPnl");
@@ -237,10 +252,12 @@ public class Frame extends javax.swing.JFrame {
     
     public boolean mainNav(String username, String password){
         
+        System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username);
+        
         boolean bLogin = false;
         
-        System.out.println(username);
-        System.out.println(password);
+//        System.out.println(username);
+//        System.out.println(password);
         
         User login = main.sqlite.loginUser(username, password);
         
@@ -251,7 +268,8 @@ public class Frame extends javax.swing.JFrame {
               
         if (login != null){
             bLogin = true;
-            System.out.println("FRAME: LOGIN: TRUE");
+            //System.out.println("FRAME: LOGIN: TRUE");
+            System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username + " successful");
             frameView.show(Container, "homePnl");
             
             int role = login.getRole();
@@ -277,7 +295,8 @@ public class Frame extends javax.swing.JFrame {
             
         }
         else
-            System.out.println("FRAME: LOGIN: FALSE");
+//            System.out.println("FRAME: LOGIN: FALSE");
+            System.out.println(new Timestamp(System.currentTimeMillis()) + "Login attempt from user " + username + " failed");
         
         return bLogin;
         
@@ -293,13 +312,18 @@ public class Frame extends javax.swing.JFrame {
         frameView.show(Container, "registerPnl");
     }
     
-    public void registerAction(String username, String password, String confpass){
+    public boolean registerAction(String username, String password, String confpass){
         
-        if (password.equals(confpass))
+        if (password.equals(confpass)) {
             main.sqlite.registerUser(username, password);
+            return true;
+        }
         else
-            System.out.println("Passwords do not match.");
+//            System.out.println("Passwords do not match.");
+          System.out.println(new Timestamp(System.currentTimeMillis()) + "Register attempt failed - passwords do not match");
 //        main.sqlite.addUser(username, password);
+        return false;
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

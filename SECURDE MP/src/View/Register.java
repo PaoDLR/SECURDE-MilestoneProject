@@ -7,6 +7,7 @@ public class Register extends javax.swing.JPanel {
     
     public Register() {
         initComponents();
+        errorLabel.setVisible(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -19,6 +20,7 @@ public class Register extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         confirmPassword = new javax.swing.JPasswordField();
         password = new javax.swing.JPasswordField();
+        errorLabel = new javax.swing.JLabel();
 
         jButton1.setBackground(new java.awt.Color(0, 0, 0));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -77,6 +79,9 @@ public class Register extends javax.swing.JPanel {
             }
         });
 
+        errorLabel.setForeground(new java.awt.Color(255, 51, 51));
+        errorLabel.setText("Failed to register new user.");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,12 +96,17 @@ public class Register extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(200, 200, 200)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(username)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(confirmPassword)
-                    .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(200, 200, 200))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(errorLabel)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(username)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(confirmPassword)
+                            .addComponent(password, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(200, 200, 200))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +115,9 @@ public class Register extends javax.swing.JPanel {
                 .addComponent(jButton2)
                 .addGap(24, 24, 24)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(18, 18, 18)
+                .addComponent(errorLabel)
+                .addGap(8, 8, 8)
                 .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -118,14 +130,20 @@ public class Register extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        frame.registerAction(username.getText(), new String(password.getPassword()), new String(confirmPassword.getPassword()));
-        frame.loginNav();
+        if (frame.registerAction(username.getText(), new String(password.getPassword()), new String(confirmPassword.getPassword()))){
+            errorLabel.setVisible(false);
+            frame.loginNav();
+        }
+        else
+            errorLabel.setVisible(true);
+            
         username.setText("");
         password.setText("");
         confirmPassword.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        errorLabel.setVisible(false);
         frame.loginNav();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -144,6 +162,7 @@ public class Register extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField confirmPassword;
+    private javax.swing.JLabel errorLabel;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

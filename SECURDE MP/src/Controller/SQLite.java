@@ -6,6 +6,7 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -146,11 +147,11 @@ public class SQLite {
 
             for (int i=0;i<users.size();i++){
                 if (users.get(i).getUsername().toLowerCase().equals(username.toLowerCase())){
-                    System.out.println("Found");
-                    System.out.println("Username: " + users.get(i).getUsername());
-                    System.out.println("Hashed Password: " + users.get(i).getPassword());
-                    System.out.println("Plain Password: " + password);
-                    System.out.println("Plain Password Hashed: " + passwordUtils.encryptThisString(password));
+//                    System.out.println("Found");
+//                    System.out.println("Username: " + users.get(i).getUsername());
+//                    System.out.println("Hashed Password: " + users.get(i).getPassword());
+//                    System.out.println("Plain Password: " + password);
+//                    System.out.println("Plain Password Hashed: " + passwordUtils.encryptThisString(password));
 
                     user = users.get(i);
                     
@@ -204,13 +205,16 @@ public class SQLite {
                 
                 }//checkString
                 else
-                    System.out.println("Password must contain at least one capital letter and one number");
+                    //System.out.println("Password must contain at least one capital letter and one number");
+                    System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - password complexity");
             }//special
             else
-                System.out.println("Password must contain at least one special character.");
+                System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - password topology");
+//                System.out.println("Password must contain at least one special character.");
         }//found
         else
-            System.out.println("This user already exists.");
+//            System.out.println("This user already exists.");
+            System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - user exists");
         
     }    
 }

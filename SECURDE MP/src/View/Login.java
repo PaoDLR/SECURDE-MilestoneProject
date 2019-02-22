@@ -110,10 +110,9 @@ public class Login extends javax.swing.JPanel {
         String username = jTextField1.getText().toString();
         String password = new String(jPasswordField1.getPassword());
         
-        System.out.println("IN LOGIN");
-        System.out.println("Username: " + username);
-        System.out.println("Password: " + password);
-        
+        //System.out.println("IN LOGIN");
+//        System.out.println("Username: " + username);
+//        System.out.println("Password: " + password);   
 
         if (!(username.contains("<script>") || password.contains("<script>"))){
             login = frame.mainNav(username, password);
