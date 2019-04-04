@@ -1,0 +1,13 @@
+2019-02-28 15:21:42.471 Login attempt from user admin
+loginUser: true
+2019-02-28 15:21:42.474 Login attempt from user admin successful
+2019-02-28 15:21:53.71 Login attempt from user sadsadsa
+2019-02-28 15:21:53.711Login attempt from user sadsadsa failed
+2019-02-28 15:21:57.762 Login attempt from user sadsadsa
+2019-02-28 15:21:57.763Login attempt from user sadsadsa failed
+2019-02-28 15:22:00.246 Login attempt from user sadsadsa
+2019-02-28 15:22:00.247Login attempt from user sadsadsa failed
+2019-02-28 15:22:02.861 Login attempt from user sadsadsa
+2019-02-28 15:22:02.862Login attempt from user sadsadsa failed
+2019-02-28 15:22:05.244 Login attempt from user sadsadsa
+2019-02-28 15:22:05.245Login attempt from user sadsadsa failed
