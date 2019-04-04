@@ -5,13 +5,20 @@ import Model.User;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Dimension;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.time.LocalDateTime;
 import javax.swing.WindowConstants;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 public class Frame extends javax.swing.JFrame {
     
@@ -227,15 +234,48 @@ public class Frame extends javax.swing.JFrame {
         loginPnl.frame = this;
         registerPnl.frame = this;
         
+//        try {
+//            LocalDate date = LocalDate.now();
+//            
+//            FileHandler fh;
+//            
+//            
+//            
+//            File tempFile = new File ("./" + "Log-" + date + ".txt");
+//            if (!tempFile.exists())
+//                fileOut = new PrintStream("./" + "Log-" + date + ".txt");
+//            else
+//                fileOut = new PrintStream(tempFile);
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         
-        
+        FileHandler fh;
         try {
-            fileOut = new PrintStream("./out.txt");
-        } catch (FileNotFoundException ex) {
+            LocalDate date = LocalDate.now();
+            
+//            File file = new File("./Log.txt");
+//            file.setReadOnly();
+            
+            fh = new FileHandler("./" + "Log.txt", true);
+            
+            Logger.getLogger(Frame.class.getName()).addHandler(fh);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
             Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        //System.setOut(fileOut);
         
-        System.setOut(fileOut);
+        adminHomePnl.init(main.sqlite);
+        clientHomePnl.init(main.sqlite);
+        managerHomePnl.init(main.sqlite);
+        staffHomePnl.init(main.sqlite);
         
         Container.setLayout(frameView);
         Container.add(loginPnl, "loginPnl");
@@ -254,7 +294,8 @@ public class Frame extends javax.swing.JFrame {
     
     public boolean mainNav(String username, String password){
         
-        System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username);
+        //System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username);
+       Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, "{0} Login attempt from user {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
         
         boolean bLogin = false;
         
@@ -271,7 +312,7 @@ public class Frame extends javax.swing.JFrame {
         if (login != null){
             bLogin = true;
             //System.out.println("FRAME: LOGIN: TRUE");
-            System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username + " successful");
+            //System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username + " successful");
             frameView.show(Container, "homePnl");
             
             int role = login.getRole();
@@ -296,9 +337,10 @@ public class Frame extends javax.swing.JFrame {
             
             
         }
-        else
+        
 //            System.out.println("FRAME: LOGIN: FALSE");
-            System.out.println(new Timestamp(System.currentTimeMillis()) + "Login attempt from user " + username + " failed");
+//            System.out.println(new Timestamp(System.currentTimeMillis()) + "Login attempt from user " + username + " failed");
+//        Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, "{0} Login attempt from user {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
         
         return bLogin;
         
@@ -322,7 +364,7 @@ public class Frame extends javax.swing.JFrame {
         }
         else
 //            System.out.println("Passwords do not match.");
-          System.out.println(new Timestamp(System.currentTimeMillis()) + "Register attempt failed - passwords do not match");
+//          System.out.println(new Timestamp(System.currentTimeMillis()) + "Register attempt failed - passwords do not match");
 //        main.sqlite.addUser(username, password);
         return false;
         
