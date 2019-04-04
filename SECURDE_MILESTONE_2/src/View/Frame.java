@@ -295,7 +295,7 @@ public class Frame extends javax.swing.JFrame {
     public boolean mainNav(String username, String password){
         
         //System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username);
-       Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, "{0} Login attempt from user {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+       Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Login attempt from user {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
         
         boolean bLogin = false;
         
