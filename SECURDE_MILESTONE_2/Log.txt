@@ -2,3 +2,25 @@ Apr 04, 2019 6:00:15 PM View.Frame mainNav
 SEVERE: 4/4/19 6:00 PM Login attempt from user nigger
 Apr 04, 2019 6:00:33 PM View.Frame mainNav
 SEVERE: 4/4/19 6:00 PM Login attempt from user nigga
+Apr 04, 2019 6:17:23 PM View.Frame mainNav
+SEVERE: 4/4/19 6:17 PM Login attempt from user nigger;
+Apr 04, 2019 6:20:59 PM View.Frame mainNav
+SEVERE: 4/4/19 6:20 PM Login attempt from user client1
+Apr 04, 2019 6:21:04 PM View.Frame mainNav
+SEVERE: 4/4/19 6:21 PM Login attempt from user client1
+Apr 04, 2019 6:23:16 PM View.Frame mainNav
+SEVERE: 4/4/19 6:23 PM Login attempt from user client1
+Apr 04, 2019 6:25:17 PM View.Frame mainNav
+SEVERE: 4/4/19 6:25 PM Login attempt from user client1
+Apr 04, 2019 6:31:35 PM View.Frame mainNav
+SEVERE: 4/4/19 6:31 PM Login attempt from user client1
+Apr 04, 2019 6:32:31 PM View.Frame mainNav
+SEVERE: 4/4/19 6:32 PM Login attempt from user client1
+Apr 04, 2019 6:33:36 PM View.Frame mainNav
+SEVERE: 4/4/19 6:33 PM Login attempt from user client1
+Apr 04, 2019 6:33:57 PM View.Frame mainNav
+SEVERE: 4/4/19 6:33 PM Login attempt from user client1
+Apr 04, 2019 6:34:21 PM View.Frame mainNav
+SEVERE: 4/4/19 6:34 PM Login attempt from user client1
+Apr 04, 2019 6:35:15 PM View.Frame mainNav
+SEVERE: 4/4/19 6:35 PM Login attempt from user client1

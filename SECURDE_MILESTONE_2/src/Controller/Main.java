@@ -45,6 +45,12 @@ public class Main {
             
         }
         
+        sqlite.createProductTable();
+        sqlite.createLogsTable();
+        sqlite.createHistoryTable();
+        
+        
+        
         // Initialize User Interface
         Frame frame = new Frame();
         frame.init(this);

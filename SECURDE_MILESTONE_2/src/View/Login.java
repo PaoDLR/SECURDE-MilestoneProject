@@ -1,14 +1,24 @@
 
 package View;
 
+import java.util.ArrayList;
+
 public class Login extends javax.swing.JPanel {
 
     public Frame frame;
     private int lock = 5;
     
+    private ArrayList<String> invalidArr = new ArrayList<String>();
+    
     public Login() {
         initComponents();
         errorLabel.setVisible(false);
+        
+        invalidArr.add("=");
+        invalidArr.add("'");
+        invalidArr.add("<");
+        invalidArr.add(">");
+        invalidArr.add(";");
     }
 
     @SuppressWarnings("unchecked")
@@ -110,11 +120,19 @@ public class Login extends javax.swing.JPanel {
         String username = jTextField1.getText().toString();
         String password = new String(jPasswordField1.getPassword());
         
+        boolean valid = true;
+        
+        for (int j=0;j<invalidArr.size();j++)
+            if (username.contains(invalidArr.get(j)) || password.contains(invalidArr.get(j))){
+                valid = false;
+                break;
+            }
+        
         //System.out.println("IN LOGIN");
 //        System.out.println("Username: " + username);
 //        System.out.println("Password: " + password);   
 
-        if (!(username.contains("<script>") || password.contains("<script>"))){
+        if (valid){
             login = frame.mainNav(username, password);
             if (!login){
                 lock--;
@@ -133,7 +151,8 @@ public class Login extends javax.swing.JPanel {
             }
         }
         else {
-            System.out.println("No scripts allowed!");
+            System.out.println("Invalid character detected");
+            errorLabel.setVisible(true);
             lock--;
         }
         

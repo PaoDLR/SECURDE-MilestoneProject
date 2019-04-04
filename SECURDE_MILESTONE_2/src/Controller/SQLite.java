@@ -21,6 +21,16 @@ public class SQLite {
     private int lock = 0;
     public int DEBUG_MODE = 0;
     
+    private ArrayList<String> invalidArr = new ArrayList<String>();
+    
+    public SQLite () {
+        invalidArr.add("=");
+        invalidArr.add("'");
+        invalidArr.add("<");
+        invalidArr.add(">");
+        invalidArr.add(";");
+    }
+    
     public void createNewDatabase() {
         try (Connection conn = DriverManager.getConnection(driverURL)) {
             if (conn != null) {
@@ -301,12 +311,15 @@ public class SQLite {
         User user = null;
         ArrayList<User> users = null;
         
- 
+        boolean valid = true;
         
-        if (!(username.contains("SELECT") || username.contains("INSERT") 
-                || username.contains(";") || username.contains("--") || username.contains("++")))
-            if (!(password.contains("SELECT") || password.contains("INSERT") 
-                || password.contains(";") || password.contains("--") || password.contains("++"))){
+        for (int j=0;j<invalidArr.size();j++)
+            if (username.contains(invalidArr.get(j)) || password.contains(invalidArr.get(j))){
+                valid = false;
+                break;
+            }
+                
+        if (valid){
         
         
             users = getUsers();
@@ -345,7 +358,7 @@ public class SQLite {
             }
         }
         
-        if (login == false)
+        if (login == false || !valid)
             return null;
             
         System.out.println("loginUser: " + login);
