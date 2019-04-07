@@ -7,6 +7,7 @@ package View;
 
 import Controller.SQLite;
 import Model.Product;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -201,7 +202,12 @@ public class MgmtProduct extends javax.swing.JPanel {
 
             if (result == JOptionPane.OK_OPTION) {
                 System.out.println(stockFld.getText());
-                sqlite.purchaseProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", Integer.parseInt(stockFld.getText()));
+                sqlite.purchaseProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
+                        Integer.parseInt(stockFld.getText()));
+                sqlite.addHistory(sqlite.getLoggedIn().getUsername(), 
+                        tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
+                        Integer.parseInt(stockFld.getText()), 
+                        new Timestamp(System.currentTimeMillis()) + "");
                 init();
             }
         }
