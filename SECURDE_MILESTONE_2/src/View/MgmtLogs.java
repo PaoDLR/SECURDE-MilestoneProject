@@ -42,11 +42,26 @@ public class MgmtLogs extends javax.swing.JPanel {
 //      LOAD CONTENTS
         ArrayList<Logs> logs = sqlite.getLogs();
         for(int nCtr = 0; nCtr < logs.size(); nCtr++){
+            if (sqlite.DEBUG_MODE == 1) 
             tableModel.addRow(new Object[]{
                 logs.get(nCtr).getEvent(), 
                 logs.get(nCtr).getUsername(), 
                 logs.get(nCtr).getDesc(), 
                 logs.get(nCtr).getTimestamp()});
+            else if (sqlite.DEBUG_MODE == 0){
+                if (!logs.get(nCtr).getEvent().contains("FAIL"))
+                    tableModel.addRow(new Object[]{
+                    logs.get(nCtr).getEvent(), 
+                    logs.get(nCtr).getUsername(), 
+                    logs.get(nCtr).getDesc(), 
+                    logs.get(nCtr).getTimestamp()});
+//                else if (!logs.get(nCtr).getEvent().contains("EDIT ROLE"))
+//                    tableModel.addRow(new Object[]{
+//                    logs.get(nCtr).getEvent(), 
+//                    logs.get(nCtr).getUsername(), 
+//                    logs.get(nCtr).getDesc(), 
+//                    logs.get(nCtr).getTimestamp()});
+            }
         }
     }
     /**
@@ -150,6 +165,7 @@ public class MgmtLogs extends javax.swing.JPanel {
             sqlite.DEBUG_MODE = 0;
         else
             sqlite.DEBUG_MODE = 1;
+        init();
     }//GEN-LAST:event_debugBtnActionPerformed
 
 
