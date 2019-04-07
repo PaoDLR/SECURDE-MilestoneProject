@@ -126,13 +126,13 @@ public class SQLite {
         String sql = "INSERT INTO history(username,name,stock,timestamp) VALUES(?,?,?,?)";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            PreparedStatement pstmt = conn.prepareStatement(sql);){
             pstmt.setString(1, username);
             pstmt.setString(2, name);
             pstmt.setInt(3, stock);
             pstmt.setString(4, timestamp);
   
-            pstmt.executeUpdate(sql);
+            pstmt.executeUpdate();
         } catch (Exception ex) {}
     }
     
@@ -140,12 +140,12 @@ public class SQLite {
         String sql = "INSERT INTO logs(event,username,desc,timestamp) VALUES(?,?,?,?)";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            PreparedStatement pstmt = conn.prepareStatement(sql);){
             pstmt.setString(1, event);
             pstmt.setString(2, username);
             pstmt.setString(3, desc);
             pstmt.setString(4, timestamp);
-            pstmt.executeUpdate(sql);
+            pstmt.executeUpdate();
         } catch (Exception ex) {}
     }
     
@@ -153,11 +153,11 @@ public class SQLite {
         String sql = "INSERT INTO product(name,stock,price) VALUES(?,?,?)";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            PreparedStatement pstmt = conn.prepareStatement(sql);){
             pstmt.setString(1, name);
             pstmt.setInt(2, stock);
             pstmt.setDouble(3, price);
-            pstmt.executeUpdate(sql);
+            pstmt.executeUpdate();
         System.out.println("New product added: " + name);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been added", new Object[]{new Timestamp(System.currentTimeMillis()), name});
             this.addLogs("ADD PRODUCT", name, "Product added " + name, new Timestamp(System.currentTimeMillis()).toString());
@@ -169,12 +169,12 @@ public class SQLite {
         System.out.println(sql);
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            PreparedStatement pstmt = conn.prepareStatement(sql);){
             pstmt.setString(1, name);
             pstmt.setInt(2, stock);
             pstmt.setDouble(3, price);
             pstmt.setString(4, oldname);
-            pstmt.executeUpdate(sql);
+            pstmt.executeUpdate();
             System.out.println("Product edited: " + name);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been edited", new Object[]{new Timestamp(System.currentTimeMillis()), name});
             this.addLogs("EDIT PRODUCT", name, "Product edited " + name, new Timestamp(System.currentTimeMillis()).toString());
@@ -185,9 +185,9 @@ public class SQLite {
         String sql = "DELETE FROM product WHERE name=?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            PreparedStatement pstmt = conn.prepareStatement(sql);){
             pstmt.setString(1, name);
-            pstmt.executeUpdate(sql);
+            pstmt.executeUpdate();
             System.out.println("Product deleted: " + name);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been deleted", new Object[]{new Timestamp(System.currentTimeMillis()), name});
             this.addLogs("DELETE PRODUCT", name, "Product deleted " + name, new Timestamp(System.currentTimeMillis()).toString());
@@ -199,8 +199,8 @@ public class SQLite {
         ArrayList<History> histories = new ArrayList<History>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            ResultSet rs = pstmt.executeQuery(sql)){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
             
             while (rs.next()) {
                 histories.add(new History(rs.getInt("id"),
@@ -213,16 +213,40 @@ public class SQLite {
         return histories;
     }
     
+//    public ArrayList<History> getHistory(String key){
+//        String sql = "SELECT id, username, name, stock, timestamp FROM history";
+//        ArrayList<History> histories = new ArrayList<History>();
+//        
+//        try (Connection conn = DriverManager.getConnection(driverURL);
+//            Statement stmt = conn.createStatement();
+////            pstmt.setString(1,"%" + key + "%");
+//            ResultSet rs = stmt.executeQuery(sql);){
+//            
+//            while (rs.next()) {
+//                if (rs.getString("username").contains(key) || rs.getString("name").contains(key))
+//                histories.add(new History(rs.getInt("id"),
+//                                   rs.getString("username"),
+//                                   rs.getString("name"),
+//                                   rs.getInt("stock"),
+//                                   rs.getString("timestamp")));
+//            }
+//        } catch (Exception ex) {}
+//        return histories;
+//    }
+    
     public ArrayList<History> getHistory(String key){
-        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE name LIKE ? OR username LIKE ?";
+        String sql = "SELECT id, username, name, stock, timestamp FROM history WHERE username LIKE ? OR name LIKE ?";
         ArrayList<History> histories = new ArrayList<History>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-//            pstmt.setString(1, "%" + key + "%");
-            ResultSet rs = pstmt.executeQuery(sql)){
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1,"%" + key + "%");
+            pstmt.setString(2,"%" + key + "%");
+            
+            ResultSet rs = pstmt.executeQuery();
             
             while (rs.next()) {
+                //if (rs.getString("username").contains(key) || rs.getString("name").contains(key))
                 histories.add(new History(rs.getInt("id"),
                                    rs.getString("username"),
                                    rs.getString("name"),
@@ -238,8 +262,8 @@ public class SQLite {
         ArrayList<Logs> logs = new ArrayList<Logs>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            ResultSet rs = pstmt.executeQuery(sql)){
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
             
             while (rs.next()) {
                 logs.add(new Logs(rs.getInt("id"),
@@ -274,14 +298,16 @@ public class SQLite {
     }
     
     public Product getProduct(String name){
-        String sql = "SELECT name, stock, price FROM product WHERE name='" + name + "';";
+        String sql = "SELECT name, stock, price FROM product WHERE name=?";
         Product product = null;
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
-            product = new Product(rs.getString("name"),
-                                   rs.getInt("stock"),
-                                   rs.getFloat("price"));
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, name);
+            ResultSet rs = pstmt.executeQuery();
+                product = new Product(rs.getString("name"),
+                                       rs.getInt("stock"),
+                                       rs.getFloat("price"));
+            
         } catch (Exception ex) {}
         return product;
     }
@@ -289,10 +315,12 @@ public class SQLite {
     public void purchaseProduct(String name, int stock){
         Product search = getProduct(name);
         int currStock = search.getStock() - stock;
-        String sql = "UPDATE product SET stock=" + currStock + " WHERE name='" + name + "';";
+        String sql = "UPDATE product SET stock=? WHERE name=?";
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()){
-            stmt.execute(sql);
+            PreparedStatement pstmt = conn.prepareStatement(sql);){
+            pstmt.setInt(1, currStock);
+            pstmt.setString(2, name);
+            pstmt.executeUpdate();
             System.out.println("Product purchased: " + name + ", amount purchased: " + stock);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Stock {2} of Product {1} has been purchased by " + this.loggedIn, new Object[]{new Timestamp(System.currentTimeMillis()), name, stock});
             this.addLogs("BUY PRODUCT", name, "Product purchased: " + name + " by " + loggedIn, new Timestamp(System.currentTimeMillis()).toString());
@@ -331,7 +359,7 @@ public class SQLite {
         
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery(sql)){
+            ResultSet rs = stmt.executeQuery(sql);){
             
             while (rs.next()) {
                 users.add(new User(rs.getInt("id"),
@@ -359,7 +387,7 @@ public class SQLite {
             String sql = "INSERT INTO users(username,password) VALUES(?,?)";
             
             try (Connection conn = DriverManager.getConnection(driverURL);
-                  PreparedStatement pstmt = conn.prepareStatement(sql)) {
+                  PreparedStatement pstmt = conn.prepareStatement(sql);) {
                   pstmt.setString(1, username);
                   pstmt.setString(2, password);
                   pstmt.executeUpdate();
@@ -375,11 +403,11 @@ public class SQLite {
                 String sql = "INSERT INTO users(username,password,role) VALUES(?,?,?)";
 
                 try (Connection conn = DriverManager.getConnection(driverURL);
-                    PreparedStatement pstmt = conn.prepareStatement(sql)){
+                    PreparedStatement pstmt = conn.prepareStatement(sql);){
                     pstmt.setString(1, username);
                     pstmt.setString(2, password);
                     pstmt.setInt(3, role);
-                    pstmt.executeUpdate(sql);
+                    pstmt.executeUpdate();
 
                 } catch (Exception ex) {}
                 
@@ -390,9 +418,9 @@ public class SQLite {
         String sql = "DELETE FROM users WHERE username=?";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            PreparedStatement pstmt = conn.prepareStatement(sql);) {
             pstmt.setString(1, username);
-            pstmt.executeUpdate(sql);
+            pstmt.executeUpdate();
             System.out.println("User " + username + " has been deleted.");
         } catch (Exception ex) {}
     }
@@ -401,8 +429,10 @@ public class SQLite {
         String sql = "UPDATE users SET role=? WHERE username=?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
+            PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setInt(1, Integer.parseInt(role + ""));
+            pstmt.setString(2, username);
+            pstmt.executeUpdate();
             System.out.println("Role of " + username + " updated to " + role);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Role of account {1} has been updated to {2}", new Object[]{new Timestamp(System.currentTimeMillis()), username, role});
             this.addLogs("EDIT ROLE - " + role, username, "Role has been modified to " + role, new Timestamp(System.currentTimeMillis()).toString());
@@ -414,12 +444,14 @@ public class SQLite {
             if (passwordUtils.bCheckString(password)){
         
                 String encrypt = passwordUtils.encryptThisString(password);
-                String sql = "UPDATE users SET password='" + encrypt + "' WHERE username='" + username + "';";
+                String sql = "UPDATE users SET password=? WHERE username=?";
                 //System.out.println(sql);
 
                 try (Connection conn = DriverManager.getConnection(driverURL);
-                    Statement stmt = conn.createStatement()) {
-                    stmt.execute(sql);
+                    PreparedStatement pstmt = conn.prepareStatement(sql);) {
+                    pstmt.setString(1, encrypt);
+                    pstmt.setString(2, username);
+                    pstmt.executeUpdate();
                     System.out.println("Password of " + username + " updated");
                     Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Password of account {1} has been updated", new Object[]{new Timestamp(System.currentTimeMillis()), username});
                     this.addLogs("EDIT PASSWORD", username, "Password of " + username + " modified", new Timestamp(System.currentTimeMillis()).toString());
@@ -439,21 +471,25 @@ public class SQLite {
     }
     
     public void lockUser(String username) {
-        String sql = "UPDATE users SET locked=1 WHERE username='" + username + "';";
+        String sql = "UPDATE users SET locked=? WHERE username=?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
+            PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setInt(1, 1);
+            pstmt.setString(2, username);
+            pstmt.executeUpdate();
             System.out.println("User " + username + " has been locked.");
         } catch (Exception ex) {}
     }
     
     public void unlockUser(String username) {
-        String sql = "UPDATE users SET locked=0 WHERE username='" + username + "';";
+        String sql = "UPDATE users SET locked=? WHERE username=?";
         
         try (Connection conn = DriverManager.getConnection(driverURL);
-            Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
+            PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setInt(1, 0);
+            pstmt.setString(2, username);
+            pstmt.executeUpdate();
             System.out.println("User " + username + " has been unlocked.");
         } catch (Exception ex) {}
     }

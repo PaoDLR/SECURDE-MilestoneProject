@@ -260,7 +260,7 @@ public class MgmtUser extends javax.swing.JPanel {
                 //    System.out.println("Match");
                 //    System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0) + "");
                     sqlite.editPassword(tableModel.getValueAt(table.getSelectedRow(), 0) + "", password.getText());
-                    
+                    init();
                 }
             }
         }

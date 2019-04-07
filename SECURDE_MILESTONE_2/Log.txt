@@ -406,3 +406,101 @@ Apr 07, 2019 4:33:45 PM View.Frame mainNav
 INFO: 4/7/19 4:33 PM Login attempt from user manager
 Apr 07, 2019 4:33:45 PM View.Frame mainNav
 INFO: 4/7/19 4:33 PM Login attempt from user manager successful
+Apr 07, 2019 11:10:22 PM View.Frame mainNav
+INFO: 4/7/19 11:10 PM Login attempt from user admin
+Apr 07, 2019 11:10:22 PM View.Frame mainNav
+INFO: 4/7/19 11:10 PM Login attempt from user admin successful
+Apr 07, 2019 11:14:26 PM View.Frame mainNav
+INFO: 4/7/19 11:14 PM Login attempt from user admin
+Apr 07, 2019 11:14:26 PM View.Frame mainNav
+INFO: 4/7/19 11:14 PM Login attempt from user admin successful
+Apr 07, 2019 11:15:12 PM View.Frame mainNav
+INFO: 4/7/19 11:15 PM Login attempt from user admin
+Apr 07, 2019 11:15:12 PM View.Frame mainNav
+INFO: 4/7/19 11:15 PM Login attempt from user admin successful
+Apr 07, 2019 11:17:49 PM View.Frame mainNav
+INFO: 4/7/19 11:17 PM Login attempt from user admin
+Apr 07, 2019 11:17:49 PM View.Frame mainNav
+INFO: 4/7/19 11:17 PM Login attempt from user admin successful
+Apr 07, 2019 11:29:29 PM View.Frame mainNav
+INFO: 4/7/19 11:29 PM Login attempt from user admin
+Apr 07, 2019 11:29:29 PM View.Frame mainNav
+INFO: 4/7/19 11:29 PM Login attempt from user admin successful
+Apr 07, 2019 11:29:35 PM Controller.SQLite editRole
+INFO: 4/7/19 11:29 PM Role of account client1 has been updated to 3
+Apr 07, 2019 11:29:54 PM Controller.SQLite editRole
+INFO: 4/7/19 11:29 PM Role of account staff has been updated to 2
+Apr 07, 2019 11:29:59 PM View.Frame logoutBtnActionPerformed
+INFO: 4/7/19 11:29 PM User admin has logged out
+Apr 07, 2019 11:30:04 PM View.Frame mainNav
+INFO: 4/7/19 11:30 PM Login attempt from user admin
+Apr 07, 2019 11:30:04 PM View.Frame mainNav
+INFO: 4/7/19 11:30 PM Login attempt from user admin successful
+Apr 07, 2019 11:31:58 PM View.Frame mainNav
+INFO: 4/7/19 11:31 PM Login attempt from user admin
+Apr 07, 2019 11:31:58 PM View.Frame mainNav
+INFO: 4/7/19 11:31 PM Login attempt from user admin successful
+Apr 07, 2019 11:33:11 PM View.Frame mainNav
+INFO: 4/7/19 11:33 PM Login attempt from user admin
+Apr 07, 2019 11:33:11 PM View.Frame mainNav
+INFO: 4/7/19 11:33 PM Login attempt from user admin successful
+Apr 07, 2019 11:36:20 PM View.Frame mainNav
+INFO: 4/7/19 11:36 PM Login attempt from user admin
+Apr 07, 2019 11:36:20 PM View.Frame mainNav
+INFO: 4/7/19 11:36 PM Login attempt from user admin successful
+Apr 07, 2019 11:37:08 PM View.Frame mainNav
+INFO: 4/7/19 11:37 PM Login attempt from user admin
+Apr 07, 2019 11:37:08 PM View.Frame mainNav
+INFO: 4/7/19 11:37 PM Login attempt from user admin successful
+Apr 07, 2019 11:37:12 PM Controller.SQLite editRole
+INFO: 4/7/19 11:37 PM Role of account client1 has been updated to 3
+Apr 07, 2019 11:39:42 PM View.Frame mainNav
+INFO: 4/7/19 11:39 PM Login attempt from user admin
+Apr 07, 2019 11:39:42 PM View.Frame mainNav
+INFO: 4/7/19 11:39 PM Login attempt from user admin successful
+Apr 07, 2019 11:39:53 PM Controller.SQLite editRole
+INFO: 4/7/19 11:39 PM Role of account client1 has been updated to 2
+Apr 07, 2019 11:39:57 PM View.Frame logoutBtnActionPerformed
+INFO: 4/7/19 11:39 PM User admin has logged out
+Apr 07, 2019 11:40:10 PM View.Frame registerAction
+INFO: 4/7/19 11:40 PM Register attempt with username client3
+Apr 07, 2019 11:40:10 PM Controller.SQLite registerUser
+INFO: 4/7/19 11:40 PM Register attempt with username client3 successful
+Apr 07, 2019 11:40:18 PM View.Frame mainNav
+INFO: 4/7/19 11:40 PM Login attempt from user admin
+Apr 07, 2019 11:40:18 PM View.Frame mainNav
+INFO: 4/7/19 11:40 PM Login attempt from user admin successful
+Apr 07, 2019 11:40:51 PM Controller.SQLite editPassword
+INFO: 4/7/19 11:40 PM Password of account client1 has been updated
+Apr 07, 2019 11:41:08 PM Controller.SQLite editPassword
+INFO: 4/7/19 11:41 PM Password of account client1 has been updated
+Apr 07, 2019 11:42:06 PM Controller.SQLite purchaseProduct
+INFO: 4/7/19 11:42 PM Stock 1 of Product helden hammer has been purchased by Model.User@190fafeb
+Apr 07, 2019 11:42:10 PM Controller.SQLite editProduct
+INFO: 4/7/19 11:42 PM Product helden hammer has been edited
+Apr 07, 2019 11:42:32 PM Controller.SQLite addProduct
+INFO: 4/7/19 11:42 PM Product gourd has been added
+Apr 07, 2019 11:42:39 PM Controller.SQLite deleteProduct
+INFO: 4/7/19 11:42 PM Product gourd has been deleted
+Apr 07, 2019 11:47:23 PM View.Frame mainNav
+INFO: 4/7/19 11:47 PM Login attempt from user admin
+Apr 07, 2019 11:47:23 PM View.Frame mainNav
+INFO: 4/7/19 11:47 PM Login attempt from user admin successful
+Apr 07, 2019 11:48:42 PM View.Frame mainNav
+INFO: 4/7/19 11:48 PM Login attempt from user admin
+Apr 07, 2019 11:48:42 PM View.Frame mainNav
+INFO: 4/7/19 11:48 PM Login attempt from user admin successful
+Apr 07, 2019 11:49:34 PM Controller.SQLite addProduct
+INFO: 4/7/19 11:49 PM Product nagash book #2 has been added
+Apr 07, 2019 11:49:42 PM Controller.SQLite purchaseProduct
+INFO: 4/7/19 11:49 PM Stock 1 of Product nagash book #2 has been purchased by Model.User@584bdc8d
+Apr 07, 2019 11:52:16 PM View.Frame mainNav
+INFO: 4/7/19 11:52 PM Login attempt from user admin
+Apr 07, 2019 11:52:16 PM View.Frame mainNav
+INFO: 4/7/19 11:52 PM Login attempt from user admin successful
+Apr 07, 2019 11:52:43 PM Controller.SQLite editProduct
+INFO: 4/7/19 11:52 PM Product helden hammer has been edited
+Apr 07, 2019 11:52:49 PM Controller.SQLite editProduct
+INFO: 4/7/19 11:52 PM Product nagash book #2 has been edited
+Apr 07, 2019 11:53:08 PM Controller.SQLite editProduct
+INFO: 4/7/19 11:53 PM Product helden hammer has been edited
