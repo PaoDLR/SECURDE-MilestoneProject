@@ -39,6 +39,15 @@ public class MgmtLogs extends javax.swing.JPanel {
             tableModel.removeRow(0);
         }
         
+        if (sqlite.getLoggedIn() != null){
+            //System.out.println(sqlite.getLoggedIn().getRole());
+            if (sqlite.getLoggedIn().getRole() == 4){
+                debugBtn.setVisible(false);
+                clearBtn.setVisible(false);
+                sqlite.DEBUG_MODE = 0;
+            }
+        }
+        
 //      LOAD CONTENTS
         ArrayList<Logs> logs = sqlite.getLogs();
         for(int nCtr = 0; nCtr < logs.size(); nCtr++){

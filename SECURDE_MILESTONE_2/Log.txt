@@ -402,3 +402,7 @@ Apr 07, 2019 4:24:58 PM View.Frame mainNav
 INFO: 4/7/19 4:24 PM Login attempt from user admin
 Apr 07, 2019 4:24:58 PM View.Frame mainNav
 INFO: 4/7/19 4:24 PM Login attempt from user admin successful
+Apr 07, 2019 4:33:45 PM View.Frame mainNav
+INFO: 4/7/19 4:33 PM Login attempt from user manager
+Apr 07, 2019 4:33:45 PM View.Frame mainNav
+INFO: 4/7/19 4:33 PM Login attempt from user manager successful

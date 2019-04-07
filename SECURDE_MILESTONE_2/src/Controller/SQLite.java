@@ -23,6 +23,8 @@ public class SQLite {
     private int lock = 0;
     public int DEBUG_MODE = 0;
     
+    private User loggedIn;
+    
     private ArrayList<String> invalidArr = new ArrayList<String>();
     
     public SQLite () {
@@ -143,6 +145,34 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()){
             stmt.execute(sql);
+        System.out.println("New product added: " + name);
+            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been added", new Object[]{new Timestamp(System.currentTimeMillis()), name});
+            this.addLogs("ADD PRODUCT", name, "Product added " + name, new Timestamp(System.currentTimeMillis()).toString());
+        } catch (Exception ex) {}
+    }
+    
+    public void editProduct(String oldname, String name, int stock, double price) {
+        String sql = "UPDATE product SET name='" +name + "', stock=" + stock + ", price=" + price + " WHERE name = '" + oldname + "';";
+        System.out.println(sql);
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            System.out.println("Product edited: " + name);
+            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been edited", new Object[]{new Timestamp(System.currentTimeMillis()), name});
+            this.addLogs("EDIT PRODUCT", name, "Product edited " + name, new Timestamp(System.currentTimeMillis()).toString());
+        } catch (Exception ex) {}
+    }
+    
+    public void deleteProduct(String name){
+        String sql = "DELETE FROM product WHERE name='" +name + "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            System.out.println("Product deleted: " + name);
+            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been deleted", new Object[]{new Timestamp(System.currentTimeMillis()), name});
+            this.addLogs("DELETE PRODUCT", name, "Product deleted " + name, new Timestamp(System.currentTimeMillis()).toString());
         } catch (Exception ex) {}
     }
     
@@ -412,7 +442,6 @@ public class SQLite {
 //                    System.out.println("Plain Password Hashed: " + passwordUtils.encryptThisString(password));
 
                     user = users.get(i);
-                    
 
                     if (passwordUtils.encryptThisString(password).equals(user.getPassword())){
                             login = true;
@@ -441,6 +470,9 @@ public class SQLite {
         }
             
         System.out.println("loginUser: " + login);
+        
+        if (login)
+            loggedIn = user;
         
         return user;
         
@@ -497,5 +529,15 @@ public class SQLite {
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
             this.addLogs("REGISTER FAIL", username, "Register attempt failed, user already exists", new Timestamp(System.currentTimeMillis()).toString());
         }
-    }    
+    }
+
+    public User getLoggedIn(){
+        return loggedIn;
+    }
+    
+    public void setLoggedIn(User user){
+        this.loggedIn = user;
+    }
+    
+    
 }

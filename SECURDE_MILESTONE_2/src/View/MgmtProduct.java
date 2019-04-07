@@ -49,6 +49,21 @@ public class MgmtProduct extends javax.swing.JPanel {
                 products.get(nCtr).getStock(), 
                 products.get(nCtr).getPrice()});
         }
+        
+        if (sqlite.getLoggedIn() != null){
+            //System.out.println(sqlite.getLoggedIn().getRole());
+            if (sqlite.getLoggedIn().getRole() == 2){
+                addBtn.setVisible(false);
+                deleteBtn.setVisible(false);
+                editBtn.setVisible(false);
+            }
+            else if (sqlite.getLoggedIn().getRole() == 3){
+                purchaseBtn.setVisible(false);
+            }
+            else if (sqlite.getLoggedIn().getRole() == 4){
+                purchaseBtn.setVisible(false);
+            }
+        }
     }
     
     public void designer(JTextField component, String text){
@@ -186,6 +201,7 @@ public class MgmtProduct extends javax.swing.JPanel {
 
             if (result == JOptionPane.OK_OPTION) {
                 System.out.println(stockFld.getText());
+                
             }
         }
     }//GEN-LAST:event_purchaseBtnActionPerformed
@@ -209,6 +225,8 @@ public class MgmtProduct extends javax.swing.JPanel {
             System.out.println(nameFld.getText());
             System.out.println(stockFld.getText());
             System.out.println(priceFld.getText());
+            sqlite.addProduct(nameFld.getText(), Integer.parseInt(stockFld.getText()), Double.parseDouble(priceFld.getText()));
+            init();
         }
     }//GEN-LAST:event_addBtnActionPerformed
 
@@ -232,6 +250,11 @@ public class MgmtProduct extends javax.swing.JPanel {
                 System.out.println(nameFld.getText());
                 System.out.println(stockFld.getText());
                 System.out.println(priceFld.getText());
+                sqlite.editProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
+                        nameFld.getText(), 
+                        Integer.parseInt(stockFld.getText()), 
+                        Double.parseDouble(priceFld.getText()));
+                init();
             }
         }
     }//GEN-LAST:event_editBtnActionPerformed
@@ -242,6 +265,8 @@ public class MgmtProduct extends javax.swing.JPanel {
             
             if (result == JOptionPane.YES_OPTION) {
                 System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
+                sqlite.deleteProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "");
+                init();
             }
         }
     }//GEN-LAST:event_deleteBtnActionPerformed

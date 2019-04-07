@@ -212,6 +212,7 @@ public class Frame extends javax.swing.JFrame {
         Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} User {1} has logged out", new Object[]{new Timestamp(System.currentTimeMillis()), currentUser});
         main.sqlite.addLogs("LOG OUT", currentUser, "User '" + currentUser + "' has logged out", new Timestamp(System.currentTimeMillis()).toString());
         currentUser = "";
+        main.sqlite.setLoggedIn(null);
         frameView.show(Container, "loginPnl");
     }//GEN-LAST:event_logoutBtnActionPerformed
 

@@ -53,6 +53,16 @@ public class MgmtUser extends javax.swing.JPanel {
                 users.get(nCtr).getRole(), 
                 users.get(nCtr).isLockout()});
         }
+        
+        if (sqlite.getLoggedIn() != null){
+            //System.out.println(sqlite.getLoggedIn().getRole());
+            if (sqlite.getLoggedIn().getRole() == 4){
+                editRoleBtn.setVisible(false);
+                deleteBtn.setVisible(false);
+                
+                chgpassBtn.setVisible(false);
+            }
+        }
     }
 
     public void designer(JTextField component, String text){
