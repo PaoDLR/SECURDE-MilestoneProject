@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Login extends javax.swing.JPanel {
 
     public Frame frame;
-    private int lock = 5;
+    private int lock = 10;
     
     private ArrayList<String> invalidArr = new ArrayList<String>();
     
@@ -116,7 +116,7 @@ public class Login extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        boolean login = false;
+        int login = 0;
         String username = jTextField1.getText().toString();
         String password = new String(jPasswordField1.getPassword());
         
@@ -134,7 +134,7 @@ public class Login extends javax.swing.JPanel {
 
         if (valid){
             login = frame.mainNav(username, password);
-            if (!login){
+            if (login == 3){
                 lock--;
                 errorLabel.setText("Username or password is incorrect. Please try again. " + lock + " Attempts remaining.");
                 errorLabel.setVisible(true);
@@ -144,14 +144,20 @@ public class Login extends javax.swing.JPanel {
                     errorLabel.setText("You have been locked out due to exceeding login attempts.");
                 }
                     
-            }             
-            else{
-                lock = 5;
+            }
+            else if (login == 2) {
+                errorLabel.setText("This account is currently locked. Contact an administrator to unlock this account.");
+                errorLabel.setVisible(true);
+                lock--;
+            }
+            else {
+                lock = 10;
                 errorLabel.setVisible(false);
             }
         }
         else {
             System.out.println("Invalid character detected");
+            errorLabel.setText("Invalid character detected");
             errorLabel.setVisible(true);
             lock--;
         }

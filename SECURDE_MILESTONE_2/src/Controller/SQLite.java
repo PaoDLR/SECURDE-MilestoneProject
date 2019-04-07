@@ -4,6 +4,7 @@ import Model.History;
 import Model.Logs;
 import Model.Product;
 import Model.User;
+import View.Frame;
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
@@ -13,6 +14,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class SQLite {
     
@@ -219,9 +221,10 @@ public class SQLite {
     public void createUserTable() {
         String sql = "CREATE TABLE IF NOT EXISTS users (\n"
             + " id INTEGER PRIMARY KEY AUTOINCREMENT,\n"
-            + " username TEXT NOT NULL,\n"
+            + " username TEXT NOT NULL UNIQUE,\n"
             + " password TEXT NOT NULL,\n"
-            + " role INTEGER DEFAULT 2\n"
+            + " role INTEGER DEFAULT 2,\n"
+            + " locked INTEGER DEFAULT 0\n"
             + ");";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -242,7 +245,7 @@ public class SQLite {
     }
     
     public ArrayList<User> getUsers(){
-        String sql = "SELECT id, username, password, role FROM users";
+        String sql = "SELECT id, username, password, role, locked FROM users";
         ArrayList<User> users = new ArrayList<User>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -253,7 +256,8 @@ public class SQLite {
                 users.add(new User(rs.getInt("id"),
                                    rs.getString("username"),
                                    rs.getString("password"),
-                                   rs.getInt("role")
+                                   rs.getInt("role"),
+                                   rs.getInt("locked")
                                    ));
             
             }
@@ -297,12 +301,73 @@ public class SQLite {
     
     
     public void removeUser(String username) {
-        String sql = "DELETE FROM users WHERE username='" + username + "');";
+        String sql = "DELETE FROM users WHERE username='" + username + "';";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
             System.out.println("User " + username + " has been deleted.");
+        } catch (Exception ex) {}
+    }
+    
+    public void editRole(String username, char role) {
+        String sql = "UPDATE users SET role=" + role + " WHERE username='" + username + "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()) {
+            stmt.execute(sql);
+            System.out.println("Role of " + username + " updated to " + role);
+            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Role of account {1} has been updated to {2}", new Object[]{new Timestamp(System.currentTimeMillis()), username, role});
+            this.addLogs("EDIT ROLE - " + role, username, "Role has been modified to " + role, new Timestamp(System.currentTimeMillis()).toString());
+        } catch (Exception ex) {}
+    }
+    
+    public void editPassword(String username, String password) {
+        if (passwordUtils.bContainsSpecialCharacter(password)){
+            if (passwordUtils.bCheckString(password)){
+        
+                String encrypt = passwordUtils.encryptThisString(password);
+                String sql = "UPDATE users SET password='" + encrypt + "' WHERE username='" + username + "';";
+                //System.out.println(sql);
+
+                try (Connection conn = DriverManager.getConnection(driverURL);
+                    Statement stmt = conn.createStatement()) {
+                    stmt.execute(sql);
+                    System.out.println("Password of " + username + " updated");
+                    Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Password of account {1} has been updated", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                    this.addLogs("EDIT PASSWORD", username, "Password of " + username + " modified", new Timestamp(System.currentTimeMillis()).toString());
+                } catch (Exception ex) {}
+
+            }
+            else{
+                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Failed to edit password of {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                this.addLogs("EDIT PW FAILED", username, "Password modification failure", new Timestamp(System.currentTimeMillis()).toString());
+                JOptionPane.showMessageDialog(null, "Edit Password Failed - Must contain a number, capital letter and be 8 characters long");
+            }
+        }else{
+            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Failed to edit password of {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+            this.addLogs("EDIT PW FAILED", username, "Password modification failure", new Timestamp(System.currentTimeMillis()).toString());
+            JOptionPane.showMessageDialog(null, "Edit Password Failed - Must contain a special character.");
+        }
+    }
+    
+    public void lockUser(String username) {
+        String sql = "UPDATE users SET locked=1 WHERE username='" + username + "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()) {
+            stmt.execute(sql);
+            System.out.println("User " + username + " has been locked.");
+        } catch (Exception ex) {}
+    }
+    
+    public void unlockUser(String username) {
+        String sql = "UPDATE users SET locked=0 WHERE username='" + username + "';";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()) {
+            stmt.execute(sql);
+            System.out.println("User " + username + " has been unlocked.");
         } catch (Exception ex) {}
     }
     
@@ -358,8 +423,22 @@ public class SQLite {
             }
         }
         
-        if (login == false || !valid)
+        if (!valid)        
             return null;
+        else if (login == false){
+            if (user.getTries() < 4){
+                int tries = user.getTries() + 1;
+                user.setTries(tries);
+            }
+            else if (user.getTries() > 4){
+                user.setLockout(1);
+                this.lockUser(username);
+                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Account '{1}' has been locked", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                this.addLogs("ACCOUNT LOCK", username, "Account lockout due to too many failed attempts", new Timestamp(System.currentTimeMillis()).toString());
+            }
+            
+            return null;
+        }
             
         System.out.println("loginUser: " + login);
         
@@ -385,7 +464,9 @@ public class SQLite {
             
 //                hash = passwordUtils.encryptThisString(password);
                 this.addUser(username, password, 2);
-                System.out.println(username + " has been added to the system.");
+//                System.out.println(username + " has been added to the system.");
+                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} successful", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                this.addLogs("REGISTER SUCCESS", username, "Register attempt - success", new Timestamp(System.currentTimeMillis()).toString());
                 
                 ArrayList<User> users2 = getUsers();
                 for(int nCtr = 0; nCtr < users2.size(); nCtr++){
@@ -397,17 +478,24 @@ public class SQLite {
                 }
                 
                 }//checkString
-                else
+                else{
                     //System.out.println("Password must contain at least one capital letter and one number");
                     System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - password complexity");
+                    Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                    this.addLogs("REGISTER FAIL", username, "Register attempt failed, password complexity", new Timestamp(System.currentTimeMillis()).toString());
+                }
             }//special
-            else
+            else{
                 System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - password topology");
-//                System.out.println("Password must contain at least one special character.");
+                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                this.addLogs("REGISTER FAIL", username, "Register attempt failed, password topology", new Timestamp(System.currentTimeMillis()).toString());
+            }
         }//found
-        else
+        else{ 
 //            System.out.println("This user already exists.");
             System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - user exists");
-        
+            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+            this.addLogs("REGISTER FAIL", username, "Register attempt failed, user already exists", new Timestamp(System.currentTimeMillis()).toString());
+        }
     }    
 }

@@ -209,6 +209,9 @@ public class Frame extends javax.swing.JFrame {
     }//GEN-LAST:event_clientBtnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+        Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} User {1} has logged out", new Object[]{new Timestamp(System.currentTimeMillis()), currentUser});
+        main.sqlite.addLogs("LOG OUT", currentUser, "User '" + currentUser + "' has logged out", new Timestamp(System.currentTimeMillis()).toString());
+        currentUser = "";
         frameView.show(Container, "loginPnl");
     }//GEN-LAST:event_logoutBtnActionPerformed
 
@@ -224,6 +227,10 @@ public class Frame extends javax.swing.JFrame {
     private CardLayout contentView = new CardLayout();
     private CardLayout frameView = new CardLayout();
     private PrintStream fileOut;
+    
+    private String currentUser;
+    
+    
     
     public void init(Main controller){
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -292,12 +299,12 @@ public class Frame extends javax.swing.JFrame {
         this.setVisible(true);
     }
     
-    public boolean mainNav(String username, String password){
+    public int mainNav(String username, String password){
         
         //System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username);
        Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Login attempt from user {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
-        
-        boolean bLogin = false;
+       main.sqlite.addLogs("LOG IN ATTEMPT", username, "Log in was attempted by user", new Timestamp(System.currentTimeMillis()).toString());
+       int bLogin = 0;
         
 //        System.out.println(username);
 //        System.out.println(password);
@@ -310,34 +317,49 @@ public class Frame extends javax.swing.JFrame {
         staffBtn.setVisible(false);
               
         if (login != null){
-            bLogin = true;
-            //System.out.println("FRAME: LOGIN: TRUE");
-            //System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username + " successful");
-            frameView.show(Container, "homePnl");
-            
-            int role = login.getRole();
-            
-            switch(role) {
-                case 1: 
-                    break;
-                case 2: clientBtn.setVisible(true);
-                        contentView.show(Content, "clientHomePnl");
-                    break;
-                case 3: staffBtn.setVisible(true);
-                        contentView.show(Content, "staffHomePnl");
-                    break;
-                case 4: managerBtn.setVisible(true);
-                        contentView.show(Content, "managerHomePnl");
-                    break;
-                case 5: adminBtn.setVisible(true);
-                        contentView.show(Content, "adminHomePnl");
-                    break;
-                default:
+            if (login.isLockout() == 0){
+                bLogin = 1;
+                currentUser = username;
+                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Login attempt from user {1} successful", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                main.sqlite.addLogs("LOG IN SUCCESS", username, "Successful login attempt by user", new Timestamp(System.currentTimeMillis()).toString());
+                //System.out.println("FRAME: LOGIN: TRUE");
+                //System.out.println(new Timestamp(System.currentTimeMillis()) + " Login attempt from user " + username + " successful");
+                frameView.show(Container, "homePnl");
+
+                int role = login.getRole();
+
+                switch(role) {
+                    case 1: 
+                        break;
+                    case 2: clientBtn.setVisible(true);
+                            contentView.show(Content, "clientHomePnl");
+                        break;
+                    case 3: staffBtn.setVisible(true);
+                            contentView.show(Content, "staffHomePnl");
+                        break;
+                    case 4: managerBtn.setVisible(true);
+                            contentView.show(Content, "managerHomePnl");
+                        break;
+                    case 5: adminBtn.setVisible(true);
+                            contentView.show(Content, "adminHomePnl");
+                        break;
+                    default:
+                }
+            }
+            else{
+                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Login attempt from user {1} locked account", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                main.sqlite.addLogs("LOG IN FAIL", username, "login attempt from locked account: user", new Timestamp(System.currentTimeMillis()).toString());
+                return 2;
+                //locked account
             }
             
-            
         }
-        
+        else{
+            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Login attempt from user {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+            main.sqlite.addLogs("LOG IN FAIL", username, "Failed login attempt by user", new Timestamp(System.currentTimeMillis()).toString());
+            return 3;
+            //does not exist or wrong password
+        }
 //            System.out.println("FRAME: LOGIN: FALSE");
 //            System.out.println(new Timestamp(System.currentTimeMillis()) + "Login attempt from user " + username + " failed");
 //        Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, "{0} Login attempt from user {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
@@ -358,8 +380,12 @@ public class Frame extends javax.swing.JFrame {
     
     public boolean registerAction(String username, String password, String confpass){
         
+        Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1}", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+        main.sqlite.addLogs("REGISTER ATTEMPT", username, "Register attempt", new Timestamp(System.currentTimeMillis()).toString());
+        
         if (password.equals(confpass)) {
             main.sqlite.registerUser(username, password);
+            
             return true;
         }
         else

@@ -51,7 +51,7 @@ public class MgmtUser extends javax.swing.JPanel {
                 users.get(nCtr).getUsername(), 
                 users.get(nCtr).getPassword(), 
                 users.get(nCtr).getRole(), 
-                users.get(nCtr).getLocked()});
+                users.get(nCtr).isLockout()});
         }
     }
 
@@ -191,6 +191,8 @@ public class MgmtUser extends javax.swing.JPanel {
             if(result != null){
                 System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
                 System.out.println(result.charAt(0));
+                sqlite.editRole(table.getValueAt(table.getSelectedRow(), 0).toString(), result.charAt(0));
+                init();
             }
         }
     }//GEN-LAST:event_editRoleBtnActionPerformed
@@ -201,6 +203,8 @@ public class MgmtUser extends javax.swing.JPanel {
             
             if (result == JOptionPane.YES_OPTION) {
                 System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
+                sqlite.removeUser(table.getValueAt(table.getSelectedRow(),0) + "");
+                init();
             }
         }
     }//GEN-LAST:event_deleteBtnActionPerformed
@@ -210,12 +214,18 @@ public class MgmtUser extends javax.swing.JPanel {
             String state = "lock";
             if("1".equals(tableModel.getValueAt(table.getSelectedRow(), 3) + "")){
                 state = "unlock";
+                
             }
             
             int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to " + state + " " + tableModel.getValueAt(table.getSelectedRow(), 0) + "?", "DELETE USER", JOptionPane.YES_NO_OPTION);
             
             if (result == JOptionPane.YES_OPTION) {
                 System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
+                if (state.equals("unlock"))
+                    sqlite.unlockUser(tableModel.getValueAt(table.getSelectedRow(), 0) + "");
+                else
+                    sqlite.lockUser(tableModel.getValueAt(table.getSelectedRow(), 0) + "");
+                init();
             }
         }
     }//GEN-LAST:event_lockBtnActionPerformed
@@ -236,6 +246,12 @@ public class MgmtUser extends javax.swing.JPanel {
             if (result == JOptionPane.OK_OPTION) {
                 System.out.println(password.getText());
                 System.out.println(confpass.getText());
+                if (password.getText().equals(confpass.getText())){
+                //    System.out.println("Match");
+                //    System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0) + "");
+                    sqlite.editPassword(tableModel.getValueAt(table.getSelectedRow(), 0) + "", password.getText());
+                    
+                }
             }
         }
     }//GEN-LAST:event_chgpassBtnActionPerformed

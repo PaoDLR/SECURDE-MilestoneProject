@@ -7,7 +7,10 @@ package View;
 
 import Controller.SQLite;
 import Model.Logs;
+import com.sun.media.jfxmedia.logging.Logger;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.logging.Level;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -135,7 +138,11 @@ public class MgmtLogs extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
-        
+        java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Log table was cleared", new Object[]{new Timestamp(System.currentTimeMillis())});
+        sqlite.dropLogsTable();
+        sqlite.createLogsTable();
+        java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} New log table created", new Object[]{new Timestamp(System.currentTimeMillis())});
+        init();
     }//GEN-LAST:event_clearBtnActionPerformed
 
     private void debugBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_debugBtnActionPerformed

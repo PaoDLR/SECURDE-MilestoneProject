@@ -5,16 +5,16 @@ public class User {
     private String username;
     private String password;
     private int role;
-    private boolean lockout;
+    private int lockout;
     private int tries;
     
-    private int locked = 0;
+//  private int locked = 0;
     
 
     public User(String username, String password){
         this.username = username;
         this.password = password;
-        this.lockout = false;
+        this.lockout = 0;
         this.tries = 0;
     }
     
@@ -23,9 +23,19 @@ public class User {
         this.username = username;
         this.password = password;
         this.role = role;
-        this.lockout = false;
+        this.lockout = 0;
         this.tries = 0;
     }
+    
+    public User(int id, String username, String password, int role, int lockout){
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.lockout = lockout;
+    }
+    
+    
     
     public int getId() {
         return id;
@@ -59,12 +69,21 @@ public class User {
         this.role = role;
     }
     
-    public int getLocked() {
-        return locked;
+    public int isLockout() {
+        return lockout;
+    }
+    
+    public void setLockout(int lock) {
+        this.lockout = lock;
     }
 
-    public void setLocked(int locked) {
-        this.locked = locked;
+    
+    public int getTries() {
+        return this.tries;
+    }
+    
+    public void setTries(int tries) {
+        this.tries = tries;
     }
 
     
