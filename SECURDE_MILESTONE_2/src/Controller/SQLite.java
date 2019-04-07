@@ -315,16 +315,20 @@ public class SQLite {
     public void purchaseProduct(String name, int stock){
         Product search = getProduct(name);
         int currStock = search.getStock() - stock;
+        
         String sql = "UPDATE product SET stock=? WHERE name=?";
-        try (Connection conn = DriverManager.getConnection(driverURL);
-            PreparedStatement pstmt = conn.prepareStatement(sql);){
-            pstmt.setInt(1, currStock);
-            pstmt.setString(2, name);
-            pstmt.executeUpdate();
-            System.out.println("Product purchased: " + name + ", amount purchased: " + stock);
-            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Stock {2} of Product {1} has been purchased by " + this.loggedIn, new Object[]{new Timestamp(System.currentTimeMillis()), name, stock});
-            this.addLogs("BUY PRODUCT", name, "Product purchased: " + name + " by " + loggedIn, new Timestamp(System.currentTimeMillis()).toString());
-        } catch (Exception ex) {}
+        
+            try (Connection conn = DriverManager.getConnection(driverURL);
+                PreparedStatement pstmt = conn.prepareStatement(sql);){
+                pstmt.setInt(1, currStock);
+                pstmt.setString(2, name);
+                pstmt.executeUpdate();
+                System.out.println("Product purchased: " + name + ", amount purchased: " + stock);
+                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Stock {2} of Product {1} has been purchased by " + this.loggedIn, new Object[]{new Timestamp(System.currentTimeMillis()), name, stock});
+                this.addLogs("BUY PRODUCT", name, "Product purchased: " + name + " by " + loggedIn, new Timestamp(System.currentTimeMillis()).toString());
+            } catch (Exception ex) {}
+
+        
     }
     
     public void createUserTable() {

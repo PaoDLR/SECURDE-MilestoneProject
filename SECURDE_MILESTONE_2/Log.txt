@@ -504,3 +504,21 @@ Apr 07, 2019 11:52:49 PM Controller.SQLite editProduct
 INFO: 4/7/19 11:52 PM Product nagash book #2 has been edited
 Apr 07, 2019 11:53:08 PM Controller.SQLite editProduct
 INFO: 4/7/19 11:53 PM Product helden hammer has been edited
+Apr 07, 2019 11:57:05 PM View.Frame mainNav
+INFO: 4/7/19 11:57 PM Login attempt from user admin
+Apr 07, 2019 11:57:05 PM View.Frame mainNav
+INFO: 4/7/19 11:57 PM Login attempt from user admin successful
+Apr 07, 2019 11:57:12 PM Controller.SQLite editProduct
+INFO: 4/7/19 11:57 PM Product nagash book #2 has been edited
+Apr 08, 2019 12:01:32 AM View.Frame mainNav
+INFO: 4/8/19 12:01 AM Login attempt from user admin
+Apr 08, 2019 12:01:32 AM View.Frame mainNav
+INFO: 4/8/19 12:01 AM Login attempt from user admin successful
+Apr 08, 2019 12:08:11 AM View.Frame mainNav
+INFO: 4/8/19 12:08 AM Login attempt from user admin
+Apr 08, 2019 12:08:11 AM View.Frame mainNav
+INFO: 4/8/19 12:08 AM Login attempt from user admin successful
+Apr 08, 2019 12:12:22 AM View.Frame mainNav
+INFO: 4/8/19 12:12 AM Login attempt from user admin
+Apr 08, 2019 12:12:22 AM View.Frame mainNav
+INFO: 4/8/19 12:12 AM Login attempt from user admin successful

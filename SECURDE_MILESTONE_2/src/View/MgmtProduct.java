@@ -191,25 +191,39 @@ public class MgmtProduct extends javax.swing.JPanel {
 
     private void purchaseBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_purchaseBtnActionPerformed
         if(table.getSelectedRow() >= 0){
-            JTextField stockFld = new JTextField("0");
-            designer(stockFld, "PRODUCT STOCK");
+            if (Integer.parseInt(tableModel.getValueAt(table.getSelectedRow(), 1) + "") > 0){
+                JTextField stockFld = new JTextField("0");
+                designer(stockFld, "PRODUCT STOCK");
 
-            Object[] message = {
-                "How many " + tableModel.getValueAt(table.getSelectedRow(), 0) + " do you want to purchase?", stockFld
-            };
+                Object[] message = {
+                    "How many " + tableModel.getValueAt(table.getSelectedRow(), 0) + "(s) do you want to purchase?", stockFld
+                };
 
-            int result = JOptionPane.showConfirmDialog(null, message, "PURCHASE PRODUCT", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
-
-            if (result == JOptionPane.OK_OPTION) {
-                System.out.println(stockFld.getText());
-                sqlite.purchaseProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
-                        Integer.parseInt(stockFld.getText()));
-                sqlite.addHistory(sqlite.getLoggedIn().getUsername(), 
-                        tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
-                        Integer.parseInt(stockFld.getText()), 
-                        new Timestamp(System.currentTimeMillis()) + "");
-                init();
+                int result = JOptionPane.showConfirmDialog(null, message, "PURCHASE PRODUCT", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
+                
+                int val;
+                
+                if (result == JOptionPane.OK_OPTION) {
+                    System.out.println(stockFld.getText());
+                    try {
+                        val = Integer.parseInt(stockFld.getText());
+                        
+                        sqlite.purchaseProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
+                            Integer.parseInt(stockFld.getText()));
+                        sqlite.addHistory(sqlite.getLoggedIn().getUsername(), 
+                            tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
+                            val, 
+                            new Timestamp(System.currentTimeMillis()) + "");
+                        init();
+                        
+                    } catch (NumberFormatException ex) {
+                        JOptionPane.showMessageDialog(null, "Please input a number.");
+                    }
+                    
+                }
             }
+            else
+                JOptionPane.showMessageDialog(null, "Product " + tableModel.getValueAt(table.getSelectedRow(), 0) + " is currently out of stock.");
         }
     }//GEN-LAST:event_purchaseBtnActionPerformed
 
@@ -229,11 +243,22 @@ public class MgmtProduct extends javax.swing.JPanel {
         int result = JOptionPane.showConfirmDialog(null, message, "ADD PRODUCT", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
 
         if (result == JOptionPane.OK_OPTION) {
-            System.out.println(nameFld.getText());
-            System.out.println(stockFld.getText());
-            System.out.println(priceFld.getText());
-            sqlite.addProduct(nameFld.getText(), Integer.parseInt(stockFld.getText()), Double.parseDouble(priceFld.getText()));
-            init();
+            try {
+                System.out.println(nameFld.getText());
+                System.out.println(stockFld.getText());
+                System.out.println(priceFld.getText());
+                
+                int stockVal = Integer.parseInt(stockFld.getText());
+                double priceVal = Double.parseDouble(priceFld.getText());
+                
+                sqlite.addProduct(nameFld.getText(), 
+                        stockVal, 
+                        priceVal);
+                init();
+            }
+            catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Invalid input for price or stock value");
+            }
         }
     }//GEN-LAST:event_addBtnActionPerformed
 
@@ -254,14 +279,23 @@ public class MgmtProduct extends javax.swing.JPanel {
             int result = JOptionPane.showConfirmDialog(null, message, "EDIT PRODUCT", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
 
             if (result == JOptionPane.OK_OPTION) {
-                System.out.println(nameFld.getText());
-                System.out.println(stockFld.getText());
-                System.out.println(priceFld.getText());
-                sqlite.editProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
-                        nameFld.getText(), 
-                        Integer.parseInt(stockFld.getText()), 
-                        Double.parseDouble(priceFld.getText()));
-                init();
+                try {
+                    System.out.println(nameFld.getText());
+                    System.out.println(stockFld.getText());
+                    System.out.println(priceFld.getText());
+
+                    int stockVal = Integer.parseInt(stockFld.getText());
+                    double priceVal = Double.parseDouble(priceFld.getText());
+
+                    sqlite.editProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
+                            nameFld.getText(), 
+                            stockVal, 
+                            priceVal);
+                    init();
+                }
+                catch (NumberFormatException ex){            
+                    JOptionPane.showMessageDialog(null, "Invalid input for price or stock value");
+                }
             }
         }
     }//GEN-LAST:event_editBtnActionPerformed
