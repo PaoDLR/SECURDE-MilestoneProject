@@ -248,6 +248,19 @@ public class SQLite {
         return product;
     }
     
+    public void purchaseProduct(String name, int stock){
+        Product search = getProduct(name);
+        int currStock = search.getStock() - stock;
+        String sql = "UPDATE product SET stock=" + currStock + " WHERE name='" + name + "';";
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            Statement stmt = conn.createStatement()){
+            stmt.execute(sql);
+            System.out.println("Product purchased: " + name + ", amount purchased: " + stock);
+            Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Stock {2} of Product {1} has been purchased by " + this.loggedIn, new Object[]{new Timestamp(System.currentTimeMillis()), name, stock});
+            this.addLogs("BUY PRODUCT", name, "Product purchased: " + name + " by " + loggedIn, new Timestamp(System.currentTimeMillis()).toString());
+        } catch (Exception ex) {}
+    }
+    
     public void createUserTable() {
         String sql = "CREATE TABLE IF NOT EXISTS users (\n"
             + " id INTEGER PRIMARY KEY AUTOINCREMENT,\n"

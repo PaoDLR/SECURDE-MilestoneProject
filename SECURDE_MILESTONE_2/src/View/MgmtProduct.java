@@ -201,7 +201,8 @@ public class MgmtProduct extends javax.swing.JPanel {
 
             if (result == JOptionPane.OK_OPTION) {
                 System.out.println(stockFld.getText());
-                
+                sqlite.purchaseProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", Integer.parseInt(stockFld.getText()));
+                init();
             }
         }
     }//GEN-LAST:event_purchaseBtnActionPerformed

@@ -1,5 +1,7 @@
 package Model;
 
+//import java.util.ArrayList;
+
 public class User {
     private int id;
     private String username;
@@ -7,6 +9,8 @@ public class User {
     private int role;
     private int lockout;
     private int tries;
+    
+//  private ArrayList<Product> cart;
     
 //  private int locked = 0;
     
@@ -16,6 +20,7 @@ public class User {
         this.password = password;
         this.lockout = 0;
         this.tries = 0;
+//        this.cart = new ArrayList<Product>();
     }
     
     public User(int id, String username, String password, int role){
@@ -25,6 +30,7 @@ public class User {
         this.role = role;
         this.lockout = 0;
         this.tries = 0;
+//        this.cart = new ArrayList<Product>();
     }
     
     public User(int id, String username, String password, int role, int lockout){
@@ -33,6 +39,7 @@ public class User {
         this.password = password;
         this.role = role;
         this.lockout = lockout;
+//        this.cart = new ArrayList<Product>();
     }
     
     
@@ -85,8 +92,9 @@ public class User {
     public void setTries(int tries) {
         this.tries = tries;
     }
+    
+//    public ArrayList<Product> getCart(){
+//        return cart;
+//    }
 
-    
-    
-    
 }
