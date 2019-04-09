@@ -334,15 +334,19 @@ public class Frame extends javax.swing.JFrame {
                         break;
                     case 2: clientBtn.setVisible(true);
                             contentView.show(Content, "clientHomePnl");
+                            clientHomePnl.showPnl("clientHomePnl");
                         break;
                     case 3: staffBtn.setVisible(true);
                             contentView.show(Content, "staffHomePnl");
+                            staffHomePnl.showPnl("staffHomePnl");
                         break;
                     case 4: managerBtn.setVisible(true);
                             contentView.show(Content, "managerHomePnl");
+                            managerHomePnl.showPnl("managerHomePnl");
                         break;
                     case 5: adminBtn.setVisible(true);
                             contentView.show(Content, "adminHomePnl");
+                            adminHomePnl.showPnl("adminHomePnl");
                         break;
                     default:
                 }

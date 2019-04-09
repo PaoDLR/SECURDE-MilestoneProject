@@ -551,6 +551,8 @@ public class SQLite {
 
                     if (passwordUtils.encryptThisString(password).equals(user.getPassword())){
                             login = true;
+                            user.setTries(0);
+                            this.setUserTries(user.getUsername(), 0);
                             break; 
                     }
 

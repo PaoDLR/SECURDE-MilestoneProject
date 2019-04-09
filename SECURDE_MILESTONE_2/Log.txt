@@ -1674,3 +1674,103 @@ Apr 10, 2019 12:09:06 AM View.Frame mainNav
 INFO: 4/10/19 12:09 AM Login attempt from user client2
 Apr 10, 2019 12:09:06 AM View.Frame mainNav
 INFO: 4/10/19 12:09 AM Login attempt from user client2 successful
+Apr 10, 2019 12:09:26 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:09 AM User client2 has logged out
+Apr 10, 2019 12:09:33 AM View.Frame mainNav
+INFO: 4/10/19 12:09 AM Login attempt from user admin
+Apr 10, 2019 12:09:33 AM View.Frame mainNav
+INFO: 4/10/19 12:09 AM Login attempt from user admin successful
+Apr 10, 2019 12:10:05 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:10 AM User admin has logged out
+Apr 10, 2019 12:10:13 AM View.Frame mainNav
+INFO: 4/10/19 12:10 AM Login attempt from user client1
+Apr 10, 2019 12:10:13 AM View.Frame mainNav
+INFO: 4/10/19 12:10 AM Login attempt from user client1 successful
+Apr 10, 2019 12:10:49 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:10 AM User client1 has logged out
+Apr 10, 2019 12:10:56 AM View.Frame mainNav
+INFO: 4/10/19 12:10 AM Login attempt from user staff
+Apr 10, 2019 12:10:56 AM View.Frame mainNav
+INFO: 4/10/19 12:10 AM Login attempt from user staff successful
+Apr 10, 2019 12:13:31 AM View.Frame mainNav
+INFO: 4/10/19 12:13 AM Login attempt from user client1
+Apr 10, 2019 12:13:31 AM View.Frame mainNav
+INFO: 4/10/19 12:13 AM Login attempt from user client1 successful
+Apr 10, 2019 12:13:34 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:13 AM User client1 has logged out
+Apr 10, 2019 12:14:30 AM View.Frame mainNav
+INFO: 4/10/19 12:14 AM Login attempt from user admin
+Apr 10, 2019 12:14:30 AM View.Frame mainNav
+INFO: 4/10/19 12:14 AM Login attempt from user admin successful
+Apr 10, 2019 12:14:49 AM Controller.SQLite editProduct
+INFO: 4/10/19 12:14 AM Product ork grob has been edited
+Apr 10, 2019 12:14:50 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:14 AM User admin has logged out
+Apr 10, 2019 12:14:58 AM View.Frame mainNav
+INFO: 4/10/19 12:14 AM Login attempt from user client1
+Apr 10, 2019 12:14:58 AM View.Frame mainNav
+INFO: 4/10/19 12:14 AM Login attempt from user client1 successful
+Apr 10, 2019 12:15:01 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:15 AM User client1 has logged out
+Apr 10, 2019 12:15:15 AM View.Frame mainNav
+INFO: 4/10/19 12:15 AM Login attempt from user admin
+Apr 10, 2019 12:15:15 AM Controller.SQLite loginUser
+INFO: 4/10/19 12:15 AM Account admin has been locked
+Apr 10, 2019 12:15:15 AM View.Frame mainNav
+INFO: 4/10/19 12:15 AM Login attempt from user admin failed
+Apr 10, 2019 12:15:19 AM View.Frame mainNav
+INFO: 4/10/19 12:15 AM Login attempt from user admin
+Apr 10, 2019 12:15:19 AM View.Frame mainNav
+INFO: 4/10/19 12:15 AM Login attempt from user admin locked account
+Apr 10, 2019 12:15:26 AM View.Frame mainNav
+INFO: 4/10/19 12:15 AM Login attempt from user admin
+Apr 10, 2019 12:15:26 AM View.Frame mainNav
+INFO: 4/10/19 12:15 AM Login attempt from user admin locked account
+Apr 10, 2019 12:18:44 AM View.Frame mainNav
+INFO: 4/10/19 12:18 AM Login attempt from user admin
+Apr 10, 2019 12:18:44 AM View.Frame mainNav
+INFO: 4/10/19 12:18 AM Login attempt from user admin successful
+Apr 10, 2019 12:19:28 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:19 AM User admin has logged out
+Apr 10, 2019 12:19:30 AM View.Frame mainNav
+INFO: 4/10/19 12:19 AM Login attempt from user admin
+Apr 10, 2019 12:19:30 AM View.Frame mainNav
+INFO: 4/10/19 12:19 AM Login attempt from user admin failed
+Apr 10, 2019 12:19:31 AM View.Frame mainNav
+INFO: 4/10/19 12:19 AM Login attempt from user admin
+Apr 10, 2019 12:19:31 AM View.Frame mainNav
+INFO: 4/10/19 12:19 AM Login attempt from user admin failed
+Apr 10, 2019 12:19:35 AM View.Frame mainNav
+INFO: 4/10/19 12:19 AM Login attempt from user admin
+Apr 10, 2019 12:19:35 AM View.Frame mainNav
+INFO: 4/10/19 12:19 AM Login attempt from user admin successful
+Apr 10, 2019 12:19:38 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:19 AM User admin has logged out
+Apr 10, 2019 12:20:05 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin
+Apr 10, 2019 12:20:06 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin successful
+Apr 10, 2019 12:20:08 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:20 AM User admin has logged out
+Apr 10, 2019 12:20:10 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin
+Apr 10, 2019 12:20:11 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin failed
+Apr 10, 2019 12:20:12 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin
+Apr 10, 2019 12:20:12 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin failed
+Apr 10, 2019 12:20:14 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin
+Apr 10, 2019 12:20:14 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin failed
+Apr 10, 2019 12:20:16 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin
+Apr 10, 2019 12:20:16 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin failed
+Apr 10, 2019 12:20:19 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin
+Apr 10, 2019 12:20:19 AM View.Frame mainNav
+INFO: 4/10/19 12:20 AM Login attempt from user admin successful
+Apr 10, 2019 12:20:21 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:20 AM User admin has logged out
