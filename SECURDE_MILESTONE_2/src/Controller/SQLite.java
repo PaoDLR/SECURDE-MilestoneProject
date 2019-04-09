@@ -609,27 +609,41 @@ public class SQLite {
         
     }
     
-    public User getUser (String username) {
-        String sql = "SELECT username, password, role, locked, tries FROM users WHERE username=?";
+//    public User getUser (String username) {
+//        String sql = "SELECT id, username, password, role, locked, tries FROM users WHERE username=?";
+//        User user = null;
+//        
+//        try (Connection conn = DriverManager.getConnection(driverURL);
+//            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+//            pstmt.setString(1, username);
+//            ResultSet rs = pstmt.executeQuery();;
+//            
+//            //tries = rs.getInt("tries");
+//            user = new User(rs.getInt("id"),
+//                rs.getString("username"),
+//                rs.getString("password"),
+//                rs.getInt("role"),
+//                rs.getInt("lockout"),
+//                rs.getInt("tries"));
+//            
+//            
+//        } catch (Exception ex) {}
+//        
+//        return user;
+//    }
+    
+    public User getUser(String username){
+        String sql = "SELECT username, password, role FROM users WHERE username=?";
         User user = null;
-        
         try (Connection conn = DriverManager.getConnection(driverURL);
             PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, username);
-            ResultSet rs = pstmt.executeQuery();;
-            
-            //tries = rs.getInt("tries");
-            user = new User(rs.getInt("id"),
-                rs.getString("username"),
-                rs.getString("password"),
-                rs.getInt("role"),
-                rs.getInt("lockout"),
-                rs.getInt("tries"));
-            
-            return user;
-            
+            ResultSet rs = pstmt.executeQuery();
+                user = new User(rs.getString("username"),
+                                       rs.getString("password"),
+                                       rs.getInt("role"));
+            System.out.println("In getUser: " + user.getUsername());
         } catch (Exception ex) {}
-        
         return user;
     }
     
