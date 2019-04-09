@@ -596,6 +596,7 @@ public class SQLite {
 //                System.out.println(username + " has been added to the system.");
                 Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} successful", new Object[]{new Timestamp(System.currentTimeMillis()), username});
                 this.addLogs("REGISTER SUCCESS", username, "Register attempt - success", new Timestamp(System.currentTimeMillis()).toString());
+                JOptionPane.showMessageDialog(null, "User successfully created");
                 
                 ArrayList<User> users2 = getUsers();
                 for(int nCtr = 0; nCtr < users2.size(); nCtr++){
@@ -625,6 +626,7 @@ public class SQLite {
             System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - user exists");
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
             this.addLogs("REGISTER FAIL", username, "Register attempt failed, user already exists", new Timestamp(System.currentTimeMillis()).toString());
+            JOptionPane.showMessageDialog(null, "Please choose a unique username");
         }
     }
 

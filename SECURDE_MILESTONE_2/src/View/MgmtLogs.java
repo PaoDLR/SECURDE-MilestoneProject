@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.SimpleFormatter;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -226,6 +227,7 @@ public class MgmtLogs extends javax.swing.JPanel {
         else
             sqlite.DEBUG_MODE = 1;
         init();
+        JOptionPane.showMessageDialog(null, "Debug mode: " + sqlite.DEBUG_MODE);
     }//GEN-LAST:event_debugBtnActionPerformed
 
 

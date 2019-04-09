@@ -1064,3 +1064,71 @@ Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
 INFO: 2019-04-09 17:46:21.017Product purchased: golden idol by admin
 Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
 INFO: 4/9/19 5:46 PM New log table created
+Apr 09, 2019 10:19:27 PM View.Frame mainNav
+INFO: 4/9/19 10:19 PM Login attempt from user admin
+Apr 09, 2019 10:19:27 PM View.Frame mainNav
+INFO: 4/9/19 10:19 PM Login attempt from user admin successful
+Apr 09, 2019 10:20:19 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 10:20 PM User admin has logged out
+Apr 09, 2019 10:20:26 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user client1
+Apr 09, 2019 10:20:26 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user client1 failed
+Apr 09, 2019 10:20:30 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user client1
+Apr 09, 2019 10:20:30 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user client1 failed
+Apr 09, 2019 10:20:39 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user client1
+Apr 09, 2019 10:20:39 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user client1 failed
+Apr 09, 2019 10:20:46 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user admin
+Apr 09, 2019 10:20:46 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user admin successful
+Apr 09, 2019 10:20:49 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 10:20 PM User admin has logged out
+Apr 09, 2019 10:20:56 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user client2
+Apr 09, 2019 10:20:56 PM View.Frame mainNav
+INFO: 4/9/19 10:20 PM Login attempt from user client2 successful
+Apr 09, 2019 10:20:58 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 10:20 PM User client2 has logged out
+Apr 09, 2019 10:21:04 PM View.Frame mainNav
+INFO: 4/9/19 10:21 PM Login attempt from user staff
+Apr 09, 2019 10:21:04 PM View.Frame mainNav
+INFO: 4/9/19 10:21 PM Login attempt from user staff successful
+Apr 09, 2019 10:21:08 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 10:21 PM User staff has logged out
+Apr 09, 2019 10:21:36 PM View.Frame mainNav
+INFO: 4/9/19 10:21 PM Login attempt from user admin
+Apr 09, 2019 10:21:37 PM View.Frame mainNav
+INFO: 4/9/19 10:21 PM Login attempt from user admin successful
+Apr 09, 2019 10:22:16 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 10:22 PM User admin has logged out
+Apr 09, 2019 10:22:25 PM View.Frame registerAction
+INFO: 4/9/19 10:22 PM Register attempt with username client1
+Apr 09, 2019 10:22:25 PM Controller.SQLite registerUser
+INFO: 4/9/19 10:22 PM Register attempt with username client1 failed
+Apr 09, 2019 10:22:33 PM View.Frame mainNav
+INFO: 4/9/19 10:22 PM Login attempt from user admin
+Apr 09, 2019 10:22:33 PM View.Frame mainNav
+INFO: 4/9/19 10:22 PM Login attempt from user admin successful
+Apr 09, 2019 10:26:04 PM View.Frame registerAction
+INFO: 4/9/19 10:26 PM Register attempt with username client1
+Apr 09, 2019 10:26:04 PM Controller.SQLite registerUser
+INFO: 4/9/19 10:26 PM Register attempt with username client1 failed
+Apr 09, 2019 10:26:20 PM View.Frame mainNav
+INFO: 4/9/19 10:26 PM Login attempt from user admin
+Apr 09, 2019 10:26:20 PM View.Frame mainNav
+INFO: 4/9/19 10:26 PM Login attempt from user admin successful
+Apr 09, 2019 10:27:40 PM View.Frame mainNav
+INFO: 4/9/19 10:27 PM Login attempt from user admin
+Apr 09, 2019 10:27:40 PM View.Frame mainNav
+INFO: 4/9/19 10:27 PM Login attempt from user admin successful
+Apr 09, 2019 10:27:52 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 10:27 PM User admin has logged out
+Apr 09, 2019 10:28:01 PM View.Frame mainNav
+INFO: 4/9/19 10:28 PM Login attempt from user admin
+Apr 09, 2019 10:28:01 PM View.Frame mainNav
+INFO: 4/9/19 10:28 PM Login attempt from user admin successful
