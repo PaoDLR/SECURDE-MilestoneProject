@@ -1,0 +1,516 @@
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Register attempt
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Register attempt failed, password topology
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Register attempt
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Register attempt - success
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} login attempt from locked account: user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} login attempt from locked account: user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} login attempt from locked account: user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 1
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 0
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 0
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 52
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 51
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 3
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 2
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 4
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 2
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Password of client1 modified
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 3
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Password modification failure
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Password modification failure
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Password modification failure
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 2
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product added goblin
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product edited ork
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product deleted ork
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product added ork grob
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product purchased: ork grob by Model.User@5873f8d5
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product added helden hammer
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product purchased: helden hammer by Model.User@3184e78a
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product added golden idol
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product purchased: golden idol by Model.User@3184e78a
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product edited helden hammer
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Failed login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Role has been modified to 2
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} User admin has logged out
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Register attempt
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Register attempt - success
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Password of client1 modified
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Password of client1 modified
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product purchased: helden hammer by Model.User@190fafeb
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product edited helden hammer
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product added gourd
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product deleted gourd
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product added nagash book #2
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product purchased: nagash book #2 by Model.User@584bdc8d
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product edited helden hammer
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product edited nagash book #2
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product edited helden hammer
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Product edited nagash book #2
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Log in was attempted by user
+Apr 09, 2019 5:39:42 PM View.MgmtLogs clearBtnActionPerformed
+INFO: {1} Successful login attempt by user
+Apr 09, 2019 5:39:43 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 4/9/19 5:39 PM New log table created
+Apr 09, 2019 5:43:03 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 2019-04-09 17:43:03.68Log in was attempted by user
+Apr 09, 2019 5:43:03 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 2019-04-09 17:43:03.681Successful login attempt by user
+Apr 09, 2019 5:43:03 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 4/9/19 5:43 PM New log table created
+Apr 09, 2019 5:43:49 PM Controller.SQLite purchaseProduct
+INFO: 4/9/19 5:43 PM Stock 1 of Product golden idol has been purchased by Model.User@31ba898d
+Apr 09, 2019 5:43:52 PM Controller.SQLite purchaseProduct
+INFO: 4/9/19 5:43 PM Stock 1 of Product helden hammer has been purchased by Model.User@31ba898d
+Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 2019-04-09 17:46:21.01Product purchased: golden idol by Model.User@31ba898d
+Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 2019-04-09 17:46:21.012Product purchased: helden hammer by Model.User@31ba898d
+Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 2019-04-09 17:46:21.013Log in was attempted by user
+Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 2019-04-09 17:46:21.015Successful login attempt by user
+Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 2019-04-09 17:46:21.016Product edited golden idol
+Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 2019-04-09 17:46:21.017Product purchased: golden idol by admin
+Apr 09, 2019 5:46:21 PM View.MgmtLogs clearBtnActionPerformed
+INFO: 4/9/19 5:46 PM New log table created

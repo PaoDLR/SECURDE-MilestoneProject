@@ -61,7 +61,16 @@ public class MgmtProduct extends javax.swing.JPanel {
             else if (sqlite.getLoggedIn().getRole() == 3){
                 purchaseBtn.setVisible(false);
             }
-            else if (sqlite.getLoggedIn().getRole() == 4){
+            else if (sqlite.getLoggedIn().getRole() == 4 && sqlite.DEBUG_MODE == 0){
+                purchaseBtn.setVisible(false);
+            }
+            else if (sqlite.getLoggedIn().getRole() == 4 && sqlite.DEBUG_MODE == 1){
+                purchaseBtn.setVisible(true);
+            }
+            else if (sqlite.getLoggedIn().getRole() == 5 && sqlite.DEBUG_MODE == 1){
+                purchaseBtn.setVisible(true);
+            }
+            else if (sqlite.getLoggedIn().getRole() == 5 && sqlite.DEBUG_MODE == 0){
                 purchaseBtn.setVisible(false);
             }
         }

@@ -8,9 +8,13 @@ package View;
 import Controller.SQLite;
 import Model.Logs;
 import com.sun.media.jfxmedia.logging.Logger;
+import java.io.IOException;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.logging.FileHandler;
 import java.util.logging.Level;
+import java.util.logging.SimpleFormatter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -163,6 +167,53 @@ public class MgmtLogs extends javax.swing.JPanel {
 
     private void clearBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearBtnActionPerformed
         java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Log table was cleared", new Object[]{new Timestamp(System.currentTimeMillis())});
+        
+        FileHandler fh;
+        try {
+            LocalDate date = LocalDate.now();
+            
+//            File file = new File("./Log.txt");
+//            file.setReadOnly();
+            
+            fh = new FileHandler("./" + "Archive.txt", true);
+            
+            java.util.logging.Logger.getLogger(Frame.class.getName()).addHandler(fh);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            
+            
+            
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        ArrayList<Logs> log = sqlite.getLogs();
+        for (int i=0;i<log.size();i++)
+            java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.INFO, new Timestamp(System.currentTimeMillis()) + log.get(i).getDesc());
+
+            try {
+            LocalDate date = LocalDate.now();
+            
+//            File file = new File("./Log.txt");
+//            file.setReadOnly();
+            
+            fh = new FileHandler("./" + "Log.txt", true);
+            
+            java.util.logging.Logger.getLogger(Frame.class.getName()).addHandler(fh);
+            SimpleFormatter formatter = new SimpleFormatter();
+            fh.setFormatter(formatter);
+            
+            
+            
+        } catch (IOException ex) {
+            java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SecurityException ex) {
+            java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
         sqlite.dropLogsTable();
         sqlite.createLogsTable();
         java.util.logging.Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} New log table created", new Object[]{new Timestamp(System.currentTimeMillis())});

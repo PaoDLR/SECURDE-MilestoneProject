@@ -324,8 +324,8 @@ public class SQLite {
                 pstmt.setString(2, name);
                 pstmt.executeUpdate();
                 System.out.println("Product purchased: " + name + ", amount purchased: " + stock);
-                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Stock {2} of Product {1} has been purchased by " + this.loggedIn, new Object[]{new Timestamp(System.currentTimeMillis()), name, stock});
-                this.addLogs("BUY PRODUCT", name, "Product purchased: " + name + " by " + loggedIn, new Timestamp(System.currentTimeMillis()).toString());
+                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Stock {2} of Product {1} has been purchased by " + this.loggedIn.getUsername(), new Object[]{new Timestamp(System.currentTimeMillis()), name, stock});
+                this.addLogs("BUY PRODUCT", name, "Product purchased: " + name + " by " + loggedIn.getUsername(), new Timestamp(System.currentTimeMillis()).toString());
             } catch (Exception ex) {}
 
         
