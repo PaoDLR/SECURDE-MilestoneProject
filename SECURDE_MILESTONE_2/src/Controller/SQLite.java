@@ -134,6 +134,12 @@ public class SQLite {
   
             pstmt.executeUpdate();
         } catch (Exception ex) {}
+        
+        ArrayList<History> history = new ArrayList<History>();
+        history = getHistory();
+        
+        for (int i=0;i<history.size();i++)
+            System.out.println(history.get(i).getUsername() + " - " + history.get(i).getName());
     }
     
     public void addLogs(String event, String username, String desc, String timestamp) {
