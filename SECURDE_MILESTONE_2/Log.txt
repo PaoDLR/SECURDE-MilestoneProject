@@ -1834,3 +1834,25 @@ Apr 10, 2019 12:51:48 AM View.Frame mainNav
 INFO: 4/10/19 12:51 AM Login attempt from user manager successful
 Apr 10, 2019 12:51:51 AM View.Frame logoutBtnActionPerformed
 INFO: 4/10/19 12:51 AM User manager has logged out
+Apr 10, 2019 12:53:04 AM View.Frame mainNav
+INFO: 4/10/19 12:53 AM Login attempt from user staff
+Apr 10, 2019 12:53:04 AM View.Frame mainNav
+INFO: 4/10/19 12:53 AM Login attempt from user staff successful
+Apr 10, 2019 12:53:13 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:53 AM User staff has logged out
+Apr 10, 2019 12:56:18 AM View.Frame mainNav
+INFO: 4/10/19 12:56 AM Login attempt from user staff
+Apr 10, 2019 12:56:18 AM View.Frame mainNav
+INFO: 4/10/19 12:56 AM Login attempt from user staff successful
+Apr 10, 2019 12:56:25 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:56 AM User staff has logged out
+Apr 10, 2019 12:56:30 AM View.Frame mainNav
+INFO: 4/10/19 12:56 AM Login attempt from user admin
+Apr 10, 2019 12:56:30 AM View.Frame mainNav
+INFO: 4/10/19 12:56 AM Login attempt from user admin successful
+Apr 10, 2019 12:56:40 AM View.Frame logoutBtnActionPerformed
+INFO: 4/10/19 12:56 AM User admin has logged out
+Apr 10, 2019 12:56:46 AM View.Frame mainNav
+INFO: 4/10/19 12:56 AM Login attempt from user client1
+Apr 10, 2019 12:56:46 AM View.Frame mainNav
+INFO: 4/10/19 12:56 AM Login attempt from user client1 successful

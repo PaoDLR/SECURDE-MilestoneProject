@@ -209,14 +209,39 @@ public class MgmtHistory extends javax.swing.JPanel {
                    history.get(nCtr).getName().contains(searchFld.getText())){
                 
                     Product product = sqlite.getProduct(history.get(nCtr).getName());
-                    tableModel.addRow(new Object[]{
-                        history.get(nCtr).getUsername(), 
-                        history.get(nCtr).getName(), 
-                        history.get(nCtr).getStock(), 
-                        product.getPrice(), 
-                        product.getPrice() * history.get(nCtr).getStock(), 
-                        history.get(nCtr).getTimestamp()
-                    });
+                    
+                    if (sqlite.getLoggedIn().getRole() == 5){
+                        tableModel.addRow(new Object[]{
+                            history.get(nCtr).getUsername(), 
+                            history.get(nCtr).getName(), 
+                            history.get(nCtr).getStock(), 
+                            product.getPrice(), 
+                            product.getPrice() * history.get(nCtr).getStock(), 
+                            history.get(nCtr).getTimestamp()
+                        });
+                    }
+                    else if (sqlite.getLoggedIn().getRole() == 2) {
+                        if (history.get(nCtr).getUsername().equals(sqlite.getLoggedIn().getUsername()))
+                            tableModel.addRow(new Object[]{
+                                history.get(nCtr).getUsername(), 
+                                history.get(nCtr).getName(), 
+                                history.get(nCtr).getStock(), 
+                                product.getPrice(), 
+                                product.getPrice() * history.get(nCtr).getStock(), 
+                                history.get(nCtr).getTimestamp()
+                            });
+                    }
+                    else if (sqlite.getLoggedIn().getRole() == 3 || sqlite.getLoggedIn().getRole() == 4) {
+                        if (sqlite.getUser(history.get(nCtr).getUsername()).getRole() <= sqlite.getLoggedIn().getRole())
+                            tableModel.addRow(new Object[]{
+                                history.get(nCtr).getUsername(), 
+                                history.get(nCtr).getName(), 
+                                history.get(nCtr).getStock(), 
+                                product.getPrice(), 
+                                product.getPrice() * history.get(nCtr).getStock(), 
+                                history.get(nCtr).getTimestamp()
+                            });
+                    }
                 }
             }
         }
