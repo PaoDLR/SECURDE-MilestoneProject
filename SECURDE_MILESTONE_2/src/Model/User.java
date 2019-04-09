@@ -42,6 +42,16 @@ public class User {
 //        this.cart = new ArrayList<Product>();
     }
     
+    public User(int id, String username, String password, int role, int lockout, int tries){
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.lockout = lockout;
+        this.tries = tries;
+//        this.cart = new ArrayList<Product>();
+    }
+    
     
     
     public int getId() {

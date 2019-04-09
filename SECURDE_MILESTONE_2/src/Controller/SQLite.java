@@ -337,7 +337,8 @@ public class SQLite {
             + " username TEXT NOT NULL UNIQUE,\n"
             + " password TEXT NOT NULL,\n"
             + " role INTEGER DEFAULT 2,\n"
-            + " locked INTEGER DEFAULT 0\n"
+            + " locked INTEGER DEFAULT 0, \n"
+            + " tries INTEGER DEFAULT 0 \n"
             + ");";
 
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -358,7 +359,7 @@ public class SQLite {
     }
     
     public ArrayList<User> getUsers(){
-        String sql = "SELECT id, username, password, role, locked FROM users";
+        String sql = "SELECT id, username, password, role, locked, tries FROM users";
         ArrayList<User> users = new ArrayList<User>();
         
         try (Connection conn = DriverManager.getConnection(driverURL);
@@ -370,7 +371,8 @@ public class SQLite {
                                    rs.getString("username"),
                                    rs.getString("password"),
                                    rs.getInt("role"),
-                                   rs.getInt("locked")
+                                   rs.getInt("locked"),
+                                   rs.getInt("tries")
                                    ));
             
             }
@@ -539,6 +541,7 @@ public class SQLite {
 //                    System.out.println("Plain Password Hashed: " + passwordUtils.encryptThisString(password));
 
                     user = users.get(i);
+                    
 
                     if (passwordUtils.encryptThisString(password).equals(user.getPassword())){
                             login = true;
@@ -552,18 +555,28 @@ public class SQLite {
         if (!valid)        
             return null;
         else if (login == false){
-            if (user.getTries() < 4){
-                int tries = user.getTries() + 1;
-                user.setTries(tries);
-            }
-            else if (user.getTries() > 4){
-                user.setLockout(1);
-                this.lockUser(username);
-                Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Account '{1}' has been locked", new Object[]{new Timestamp(System.currentTimeMillis()), username});
-                this.addLogs("ACCOUNT LOCK", username, "Account lockout due to too many failed attempts", new Timestamp(System.currentTimeMillis()).toString());
-            }
-            
-            return null;
+            if (user != null ){
+                if (user.getTries() < 4){
+
+                    System.out.println("User: " + user.getUsername());
+
+                    int tries = user.getTries() + 1;    
+                    System.out.println(tries);
+                    this.setUserTries(user.getUsername(), tries);
+
+                }
+                else if (user.getTries() >= 4){
+                    user.setLockout(1);
+                    this.lockUser(username);
+                    Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Account {1} has been locked", new Object[]{new Timestamp(System.currentTimeMillis()), username});
+                    this.addLogs("ACCOUNT LOCK", username, "Account lockout due to too many failed attempts", new Timestamp(System.currentTimeMillis()).toString());
+
+                }
+
+                return null;
+                
+            } else
+                return null;
         }
             
         System.out.println("loginUser: " + login);
@@ -573,6 +586,43 @@ public class SQLite {
         
         return user;
         
+    }
+    
+    public void setUserTries (String username, int tries) {
+        String sql = "UPDATE users SET tries=? WHERE username=?";
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setInt(1, tries);
+            pstmt.setString(2, username);
+            pstmt.executeUpdate();
+            System.out.println("Tries: " + tries);
+        } catch (Exception ex) {}
+        
+    }
+    
+    public User getUser (String username) {
+        String sql = "SELECT username, password, role, locked, tries FROM users WHERE username=?";
+        User user = null;
+        
+        try (Connection conn = DriverManager.getConnection(driverURL);
+            PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, username);
+            ResultSet rs = pstmt.executeQuery();;
+            
+            //tries = rs.getInt("tries");
+            user = new User(rs.getInt("id"),
+                rs.getString("username"),
+                rs.getString("password"),
+                rs.getInt("role"),
+                rs.getInt("lockout"),
+                rs.getInt("tries"));
+            
+            return user;
+            
+        } catch (Exception ex) {}
+        
+        return user;
     }
     
     public void registerUser (String username, String password) {

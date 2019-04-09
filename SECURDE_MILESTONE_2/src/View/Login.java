@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Login extends javax.swing.JPanel {
 
     public Frame frame;
-    private int lock = 10;
+    private int lock = 5;
     
     private ArrayList<String> invalidArr = new ArrayList<String>();
     
@@ -128,13 +128,20 @@ public class Login extends javax.swing.JPanel {
                 break;
             }
         
+        
         //System.out.println("IN LOGIN");
 //        System.out.println("Username: " + username);
 //        System.out.println("Password: " + password);   
 
         if (valid){
             login = frame.mainNav(username, password);
-            if (login == 3){
+            System.out.println("Login: " + login);
+            if (login == 2) {
+                errorLabel.setText("This account is currently locked. Contact an administrator to unlock this account.");
+                errorLabel.setVisible(true);
+                lock--;
+            }
+            else if (login == 3){
                 lock--;
                 errorLabel.setText("Username or password is incorrect. Please try again. " + lock + " Attempts remaining.");
                 errorLabel.setVisible(true);
@@ -145,13 +152,8 @@ public class Login extends javax.swing.JPanel {
                 }
                     
             }
-            else if (login == 2) {
-                errorLabel.setText("This account is currently locked. Contact an administrator to unlock this account.");
-                errorLabel.setVisible(true);
-                lock--;
-            }
             else {
-                lock = 10;
+                lock = 5;
                 errorLabel.setVisible(false);
             }
         }

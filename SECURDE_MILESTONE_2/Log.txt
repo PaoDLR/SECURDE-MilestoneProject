@@ -1132,3 +1132,399 @@ Apr 09, 2019 10:28:01 PM View.Frame mainNav
 INFO: 4/9/19 10:28 PM Login attempt from user admin
 Apr 09, 2019 10:28:01 PM View.Frame mainNav
 INFO: 4/9/19 10:28 PM Login attempt from user admin successful
+Apr 09, 2019 10:45:30 PM View.Frame mainNav
+INFO: 4/9/19 10:45 PM Login attempt from user admin
+Apr 09, 2019 10:45:30 PM View.Frame mainNav
+INFO: 4/9/19 10:45 PM Login attempt from user admin successful
+Apr 09, 2019 10:45:35 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 10:45 PM User admin has logged out
+Apr 09, 2019 10:45:39 PM View.Frame mainNav
+INFO: 4/9/19 10:45 PM Login attempt from user admin
+Apr 09, 2019 10:45:39 PM View.Frame mainNav
+INFO: 4/9/19 10:45 PM Login attempt from user admin failed
+Apr 09, 2019 10:45:43 PM View.Frame mainNav
+INFO: 4/9/19 10:45 PM Login attempt from user admin
+Apr 09, 2019 10:45:43 PM View.Frame mainNav
+INFO: 4/9/19 10:45 PM Login attempt from user admin successful
+Apr 09, 2019 10:47:34 PM Controller.SQLite purchaseProduct
+INFO: 4/9/19 10:47 PM Stock 1 of Product helden hammer has been purchased by admin
+Apr 09, 2019 10:55:38 PM View.Frame mainNav
+INFO: 4/9/19 10:55 PM Login attempt from user client1
+Apr 09, 2019 10:55:38 PM View.Frame mainNav
+INFO: 4/9/19 10:55 PM Login attempt from user client1 failed
+Apr 09, 2019 10:55:47 PM View.Frame mainNav
+INFO: 4/9/19 10:55 PM Login attempt from user client1
+Apr 09, 2019 10:55:47 PM View.Frame mainNav
+INFO: 4/9/19 10:55 PM Login attempt from user client1 failed
+Apr 09, 2019 11:01:05 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1
+Apr 09, 2019 11:01:05 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1 failed
+Apr 09, 2019 11:01:13 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1
+Apr 09, 2019 11:01:13 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1 failed
+Apr 09, 2019 11:01:25 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1
+Apr 09, 2019 11:01:25 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1 failed
+Apr 09, 2019 11:01:26 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1
+Apr 09, 2019 11:01:26 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1 failed
+Apr 09, 2019 11:01:27 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1
+Apr 09, 2019 11:01:27 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1 failed
+Apr 09, 2019 11:01:34 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1
+Apr 09, 2019 11:01:34 PM View.Frame mainNav
+INFO: 4/9/19 11:01 PM Login attempt from user client1 failed
+Apr 09, 2019 11:05:58 PM View.Frame mainNav
+INFO: 4/9/19 11:05 PM Login attempt from user staff
+Apr 09, 2019 11:05:58 PM View.Frame mainNav
+INFO: 4/9/19 11:05 PM Login attempt from user staff successful
+Apr 09, 2019 11:05:59 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:05 PM User staff has logged out
+Apr 09, 2019 11:06:22 PM View.Frame mainNav
+INFO: 4/9/19 11:06 PM Login attempt from user manager
+Apr 09, 2019 11:06:22 PM View.Frame mainNav
+INFO: 4/9/19 11:06 PM Login attempt from user manager successful
+Apr 09, 2019 11:17:03 PM View.Frame mainNav
+INFO: 4/9/19 11:17 PM Login attempt from user client1
+Apr 09, 2019 11:18:34 PM View.Frame mainNav
+INFO: 4/9/19 11:18 PM Login attempt from user client1
+Apr 09, 2019 11:19:16 PM View.Frame mainNav
+INFO: 4/9/19 11:19 PM Login attempt from user client1
+Apr 09, 2019 11:20:03 PM View.Frame mainNav
+INFO: 4/9/19 11:20 PM Login attempt from user client1
+Apr 09, 2019 11:23:13 PM View.Frame mainNav
+INFO: 4/9/19 11:23 PM Login attempt from user client1
+Apr 09, 2019 11:27:13 PM View.Frame mainNav
+INFO: 4/9/19 11:27 PM Login attempt from user admin
+Apr 09, 2019 11:29:53 PM View.Frame mainNav
+INFO: 4/9/19 11:29 PM Login attempt from user client1
+Apr 09, 2019 11:31:16 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1
+Apr 09, 2019 11:31:16 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1 failed
+Apr 09, 2019 11:31:19 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1
+Apr 09, 2019 11:31:19 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1 failed
+Apr 09, 2019 11:31:21 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1
+Apr 09, 2019 11:31:21 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1 failed
+Apr 09, 2019 11:31:23 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1
+Apr 09, 2019 11:31:23 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1 failed
+Apr 09, 2019 11:31:24 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1
+Apr 09, 2019 11:31:24 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1 failed
+Apr 09, 2019 11:31:33 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user admin
+Apr 09, 2019 11:31:33 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user admin successful
+Apr 09, 2019 11:31:35 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:31 PM User admin has logged out
+Apr 09, 2019 11:31:39 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1
+Apr 09, 2019 11:31:39 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1 failed
+Apr 09, 2019 11:31:42 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1
+Apr 09, 2019 11:31:42 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user client1 failed
+Apr 09, 2019 11:31:49 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user admin
+Apr 09, 2019 11:31:49 PM View.Frame mainNav
+INFO: 4/9/19 11:31 PM Login attempt from user admin successful
+Apr 09, 2019 11:32:16 PM View.Frame mainNav
+INFO: 4/9/19 11:32 PM Login attempt from user client1
+Apr 09, 2019 11:32:17 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:32 PM Account {1} has been locked
+Apr 09, 2019 11:32:17 PM View.Frame mainNav
+INFO: 4/9/19 11:32 PM Login attempt from user client1 failed
+Apr 09, 2019 11:32:19 PM View.Frame mainNav
+INFO: 4/9/19 11:32 PM Login attempt from user client1
+Apr 09, 2019 11:32:19 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:32 PM Account {1} has been locked
+Apr 09, 2019 11:32:19 PM View.Frame mainNav
+INFO: 4/9/19 11:32 PM Login attempt from user client1 failed
+Apr 09, 2019 11:33:27 PM View.Frame mainNav
+INFO: 4/9/19 11:33 PM Login attempt from user admin
+Apr 09, 2019 11:33:27 PM View.Frame mainNav
+INFO: 4/9/19 11:33 PM Login attempt from user admin successful
+Apr 09, 2019 11:33:29 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:33 PM User admin has logged out
+Apr 09, 2019 11:33:32 PM View.Frame mainNav
+INFO: 4/9/19 11:33 PM Login attempt from user client1
+Apr 09, 2019 11:33:32 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:33 PM Account {1} has been locked
+Apr 09, 2019 11:33:32 PM View.Frame mainNav
+INFO: 4/9/19 11:33 PM Login attempt from user client1 failed
+Apr 09, 2019 11:33:58 PM View.Frame mainNav
+INFO: 4/9/19 11:33 PM Login attempt from user client1
+Apr 09, 2019 11:33:58 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:33 PM Account client1 has been locked
+Apr 09, 2019 11:33:58 PM View.Frame mainNav
+INFO: 4/9/19 11:33 PM Login attempt from user client1 failed
+Apr 09, 2019 11:35:40 PM View.Frame mainNav
+INFO: 4/9/19 11:35 PM Login attempt from user client1
+Apr 09, 2019 11:35:40 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:35 PM Account client1 has been locked
+Apr 09, 2019 11:35:41 PM View.Frame mainNav
+INFO: 4/9/19 11:35 PM Login attempt from user client1 failed
+Apr 09, 2019 11:36:03 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2
+Apr 09, 2019 11:36:03 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2 failed
+Apr 09, 2019 11:36:05 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2
+Apr 09, 2019 11:36:05 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2 failed
+Apr 09, 2019 11:36:06 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2
+Apr 09, 2019 11:36:06 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2 failed
+Apr 09, 2019 11:36:07 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2
+Apr 09, 2019 11:36:07 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2 failed
+Apr 09, 2019 11:36:08 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2
+Apr 09, 2019 11:36:08 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:36 PM Account client2 has been locked
+Apr 09, 2019 11:36:08 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2 failed
+Apr 09, 2019 11:36:20 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2
+Apr 09, 2019 11:36:20 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:36 PM Account client2 has been locked
+Apr 09, 2019 11:36:20 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user client2 failed
+Apr 09, 2019 11:36:27 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user admin
+Apr 09, 2019 11:36:27 PM View.Frame mainNav
+INFO: 4/9/19 11:36 PM Login attempt from user admin successful
+Apr 09, 2019 11:36:34 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:36 PM User admin has logged out
+Apr 09, 2019 11:37:53 PM View.Frame mainNav
+INFO: 4/9/19 11:37 PM Login attempt from user client1
+Apr 09, 2019 11:37:53 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:37 PM Account client1 has been locked
+Apr 09, 2019 11:37:53 PM View.Frame mainNav
+INFO: 4/9/19 11:37 PM Login attempt from user client1 failed
+Apr 09, 2019 11:38:37 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client1
+Apr 09, 2019 11:38:37 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client1 locked account
+Apr 09, 2019 11:38:47 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client2
+Apr 09, 2019 11:38:47 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:38 PM Account client2 has been locked
+Apr 09, 2019 11:38:47 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client2 failed
+Apr 09, 2019 11:38:49 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client2
+Apr 09, 2019 11:38:49 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:38 PM Account client2 has been locked
+Apr 09, 2019 11:38:49 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client2 failed
+Apr 09, 2019 11:38:51 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client2
+Apr 09, 2019 11:38:51 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:38 PM Account client2 has been locked
+Apr 09, 2019 11:38:52 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client2 failed
+Apr 09, 2019 11:38:59 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client2
+Apr 09, 2019 11:38:59 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:38 PM Account client2 has been locked
+Apr 09, 2019 11:38:59 PM View.Frame mainNav
+INFO: 4/9/19 11:38 PM Login attempt from user client2 failed
+Apr 09, 2019 11:39:07 PM View.Frame mainNav
+INFO: 4/9/19 11:39 PM Login attempt from user client2
+Apr 09, 2019 11:39:07 PM View.Frame mainNav
+INFO: 4/9/19 11:39 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:02 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:02 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:02 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:04 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:04 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:04 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:05 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:05 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:06 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:07 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:07 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:07 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:09 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:09 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:09 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:10 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:10 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:10 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:12 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:12 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:12 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:13 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:13 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:13 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:40:14 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2
+Apr 09, 2019 11:40:14 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:40 PM Account client2 has been locked
+Apr 09, 2019 11:40:14 PM View.Frame mainNav
+INFO: 4/9/19 11:40 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:41:58 PM View.Frame mainNav
+INFO: 4/9/19 11:41 PM Login attempt from user client1
+Apr 09, 2019 11:41:58 PM View.Frame mainNav
+INFO: 4/9/19 11:41 PM Login attempt from user client1 locked account
+Apr 09, 2019 11:42:03 PM View.Frame mainNav
+INFO: 4/9/19 11:42 PM Login attempt from user client2
+Apr 09, 2019 11:42:03 PM View.Frame mainNav
+INFO: 4/9/19 11:42 PM Login attempt from user client2 locked account
+Apr 09, 2019 11:42:11 PM View.Frame mainNav
+INFO: 4/9/19 11:42 PM Login attempt from user admin
+Apr 09, 2019 11:42:11 PM View.Frame mainNav
+INFO: 4/9/19 11:42 PM Login attempt from user admin successful
+Apr 09, 2019 11:42:16 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:42 PM User admin has logged out
+Apr 09, 2019 11:42:27 PM View.Frame mainNav
+INFO: 4/9/19 11:42 PM Login attempt from user client1
+Apr 09, 2019 11:42:27 PM View.Frame mainNav
+INFO: 4/9/19 11:42 PM Login attempt from user client1 successful
+Apr 09, 2019 11:42:42 PM Controller.SQLite purchaseProduct
+INFO: 4/9/19 11:42 PM Stock 1 of Product helden hammer has been purchased by client1
+Apr 09, 2019 11:42:44 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:42 PM User client1 has logged out
+Apr 09, 2019 11:42:52 PM View.Frame mainNav
+INFO: 4/9/19 11:42 PM Login attempt from user manager
+Apr 09, 2019 11:42:52 PM View.Frame mainNav
+INFO: 4/9/19 11:42 PM Login attempt from user manager successful
+Apr 09, 2019 11:43:02 PM Controller.SQLite editProduct
+INFO: 4/9/19 11:43 PM Product ork grob has been edited
+Apr 09, 2019 11:43:03 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:43 PM User manager has logged out
+Apr 09, 2019 11:43:12 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user client1
+Apr 09, 2019 11:43:12 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user client1 successful
+Apr 09, 2019 11:43:19 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:43 PM User client1 has logged out
+Apr 09, 2019 11:43:24 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user admin
+Apr 09, 2019 11:43:24 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user admin successful
+Apr 09, 2019 11:43:31 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:43 PM User admin has logged out
+Apr 09, 2019 11:43:36 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user manager
+Apr 09, 2019 11:43:36 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user manager successful
+Apr 09, 2019 11:43:40 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:43 PM User manager has logged out
+Apr 09, 2019 11:43:46 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user admin
+Apr 09, 2019 11:43:47 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user admin successful
+Apr 09, 2019 11:43:48 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:43 PM User admin has logged out
+Apr 09, 2019 11:43:53 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user staff
+Apr 09, 2019 11:43:53 PM View.Frame mainNav
+INFO: 4/9/19 11:43 PM Login attempt from user staff successful
+Apr 09, 2019 11:43:55 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:43 PM User staff has logged out
+Apr 09, 2019 11:44:01 PM View.Frame mainNav
+INFO: 4/9/19 11:44 PM Login attempt from user client1
+Apr 09, 2019 11:44:01 PM View.Frame mainNav
+INFO: 4/9/19 11:44 PM Login attempt from user client1 successful
+Apr 09, 2019 11:44:06 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:44 PM User client1 has logged out
+Apr 09, 2019 11:48:26 PM View.Frame mainNav
+INFO: 4/9/19 11:48 PM Login attempt from user admin
+Apr 09, 2019 11:48:26 PM View.Frame mainNav
+INFO: 4/9/19 11:48 PM Login attempt from user admin successful
+Apr 09, 2019 11:48:31 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:48 PM User admin has logged out
+Apr 09, 2019 11:48:54 PM View.Frame mainNav
+INFO: 4/9/19 11:48 PM Login attempt from user admin
+Apr 09, 2019 11:48:54 PM View.Frame mainNav
+INFO: 4/9/19 11:48 PM Login attempt from user admin failed
+Apr 09, 2019 11:48:59 PM View.Frame mainNav
+INFO: 4/9/19 11:48 PM Login attempt from user client1
+Apr 09, 2019 11:48:59 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:48 PM Account client1 has been locked
+Apr 09, 2019 11:48:59 PM View.Frame mainNav
+INFO: 4/9/19 11:48 PM Login attempt from user client1 failed
+Apr 09, 2019 11:52:47 PM View.Frame mainNav
+INFO: 4/9/19 11:52 PM Login attempt from user admin
+Apr 09, 2019 11:52:47 PM View.Frame mainNav
+INFO: 4/9/19 11:52 PM Login attempt from user admin successful
+Apr 09, 2019 11:52:49 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:52 PM User admin has logged out
+Apr 09, 2019 11:52:54 PM View.Frame mainNav
+INFO: 4/9/19 11:52 PM Login attempt from user client1
+Apr 09, 2019 11:52:54 PM View.Frame mainNav
+INFO: 4/9/19 11:52 PM Login attempt from user client1 locked account
+Apr 09, 2019 11:52:58 PM View.Frame mainNav
+INFO: 4/9/19 11:52 PM Login attempt from user client1
+Apr 09, 2019 11:52:58 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:52 PM Account client1 has been locked
+Apr 09, 2019 11:52:59 PM View.Frame mainNav
+INFO: 4/9/19 11:52 PM Login attempt from user client1 failed
+Apr 09, 2019 11:53:48 PM View.Frame mainNav
+INFO: 4/9/19 11:53 PM Login attempt from user admin
+Apr 09, 2019 11:53:48 PM View.Frame mainNav
+INFO: 4/9/19 11:53 PM Login attempt from user admin successful
+Apr 09, 2019 11:54:44 PM View.Frame logoutBtnActionPerformed
+INFO: 4/9/19 11:54 PM User admin has logged out
+Apr 09, 2019 11:54:48 PM View.Frame mainNav
+INFO: 4/9/19 11:54 PM Login attempt from user client1
+Apr 09, 2019 11:54:48 PM Controller.SQLite loginUser
+INFO: 4/9/19 11:54 PM Account client1 has been locked
+Apr 09, 2019 11:54:48 PM View.Frame mainNav
+INFO: 4/9/19 11:54 PM Login attempt from user client1 failed
+Apr 09, 2019 11:54:52 PM View.Frame mainNav
+INFO: 4/9/19 11:54 PM Login attempt from user client
+Apr 09, 2019 11:55:54 PM View.Frame mainNav
+INFO: 4/9/19 11:55 PM Login attempt from user nigger
+Apr 09, 2019 11:55:54 PM View.Frame mainNav
+INFO: 4/9/19 11:55 PM Login attempt from user nigger failed
+Apr 09, 2019 11:56:01 PM View.Frame mainNav
+INFO: 4/9/19 11:56 PM Login attempt from user clien
+Apr 09, 2019 11:56:01 PM View.Frame mainNav
+INFO: 4/9/19 11:56 PM Login attempt from user clien failed
+Apr 09, 2019 11:56:09 PM View.Frame mainNav
+INFO: 4/9/19 11:56 PM Login attempt from user client1
+Apr 09, 2019 11:56:09 PM View.Frame mainNav
+INFO: 4/9/19 11:56 PM Login attempt from user client1 locked account

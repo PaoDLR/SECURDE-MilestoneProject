@@ -347,9 +347,10 @@ public class Frame extends javax.swing.JFrame {
                     default:
                 }
             }
-            else{
+            else if (login.isLockout() == 1){
                 Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Login attempt from user {1} locked account", new Object[]{new Timestamp(System.currentTimeMillis()), username});
                 main.sqlite.addLogs("LOG IN FAIL", username, "login attempt from locked account: user", new Timestamp(System.currentTimeMillis()).toString());
+                
                 return 2;
                 //locked account
             }
@@ -358,6 +359,7 @@ public class Frame extends javax.swing.JFrame {
         else{
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Login attempt from user {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
             main.sqlite.addLogs("LOG IN FAIL", username, "Failed login attempt by user", new Timestamp(System.currentTimeMillis()).toString());
+            
             return 3;
             //does not exist or wrong password
         }

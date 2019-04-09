@@ -42,6 +42,11 @@ public class MgmtProduct extends javax.swing.JPanel {
             tableModel.removeRow(0);
         }
         
+        //2 - Client
+        //3 - Staff
+        //4 - Manager
+        //5 - Admin
+        
 //      LOAD CONTENTS
         ArrayList<Product> products = sqlite.getProduct();
         for(int nCtr = 0; nCtr < products.size(); nCtr++){
@@ -61,11 +66,8 @@ public class MgmtProduct extends javax.swing.JPanel {
             else if (sqlite.getLoggedIn().getRole() == 3){
                 purchaseBtn.setVisible(false);
             }
-            else if (sqlite.getLoggedIn().getRole() == 4 && sqlite.DEBUG_MODE == 0){
+            else if (sqlite.getLoggedIn().getRole() == 4){
                 purchaseBtn.setVisible(false);
-            }
-            else if (sqlite.getLoggedIn().getRole() == 4 && sqlite.DEBUG_MODE == 1){
-                purchaseBtn.setVisible(true);
             }
             else if (sqlite.getLoggedIn().getRole() == 5 && sqlite.DEBUG_MODE == 1){
                 purchaseBtn.setVisible(true);
@@ -216,15 +218,17 @@ public class MgmtProduct extends javax.swing.JPanel {
                     System.out.println(stockFld.getText());
                     try {
                         val = Integer.parseInt(stockFld.getText());
-                        
-                        sqlite.purchaseProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
-                            Integer.parseInt(stockFld.getText()));
-                        sqlite.addHistory(sqlite.getLoggedIn().getUsername(), 
-                            tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
-                            val, 
-                            new Timestamp(System.currentTimeMillis()) + "");
-                        init();
-                        
+                        if (val > 0) {
+                            sqlite.purchaseProduct(tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
+                                Integer.parseInt(stockFld.getText()));
+                            sqlite.addHistory(sqlite.getLoggedIn().getUsername(), 
+                                tableModel.getValueAt(table.getSelectedRow(), 0) + "", 
+                                val, 
+                                new Timestamp(System.currentTimeMillis()) + "");
+                            init();
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Error. Invalid stock amount");
+                        }
                     } catch (NumberFormatException ex) {
                         JOptionPane.showMessageDialog(null, "Please input a number.");
                     }
