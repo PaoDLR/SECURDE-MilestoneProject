@@ -1,6 +1,8 @@
 
 package View;
 
+import javax.swing.JOptionPane;
+
 public class Register extends javax.swing.JPanel {
 
     public Frame frame;
@@ -134,9 +136,10 @@ public class Register extends javax.swing.JPanel {
             errorLabel.setVisible(false);
             frame.loginNav();
         }
-        else
+        else{
+            JOptionPane.showMessageDialog(null, "Register User Failed!");
             errorLabel.setVisible(true);
-            
+        }
         username.setText("");
         password.setText("");
         confirmPassword.setText("");

@@ -135,7 +135,7 @@ public class Login extends javax.swing.JPanel {
 
         if (valid){
             login = frame.mainNav(username, password);
-            System.out.println("Login: " + login);
+            //System.out.println("Login: " + login);
             if (login == 2) {
                 errorLabel.setText("This account is currently locked. Contact an administrator to unlock this account.");
                 errorLabel.setVisible(true);
@@ -158,7 +158,7 @@ public class Login extends javax.swing.JPanel {
             }
         }
         else {
-            System.out.println("Invalid character detected");
+            //System.out.println("Invalid character detected");
             errorLabel.setText("Invalid character detected");
             errorLabel.setVisible(true);
             lock--;

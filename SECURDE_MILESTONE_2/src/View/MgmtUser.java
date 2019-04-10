@@ -190,8 +190,10 @@ public class MgmtUser extends javax.swing.JPanel {
 
     private void editRoleBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editRoleBtnActionPerformed
         if(table.getSelectedRow() >= 0){
+            //String[] options = {"1-DISABLED","2-CLIENT","3-STAFF","4-MANAGER","5-ADMIN"};
             String[] options = {"1-DISABLED","2-CLIENT","3-STAFF","4-MANAGER","5-ADMIN"};
             JComboBox optionList = new JComboBox(options);
+            User user = sqlite.getUser(table.getValueAt(table.getSelectedRow(), 0).toString());
             
             optionList.setSelectedIndex((int)tableModel.getValueAt(table.getSelectedRow(), 2) - 1);
             
@@ -199,8 +201,9 @@ public class MgmtUser extends javax.swing.JPanel {
                 "EDIT USER ROLE", JOptionPane.QUESTION_MESSAGE, null, options, options[(int)tableModel.getValueAt(table.getSelectedRow(), 2) - 1]);
             
             if(result != null){
-                System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
-                System.out.println(result.charAt(0));
+                //System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
+                //System.out.println(result.charAt(0));
+                
                 sqlite.editRole(table.getValueAt(table.getSelectedRow(), 0).toString(), result.charAt(0));
                 init();
             }
@@ -212,14 +215,21 @@ public class MgmtUser extends javax.swing.JPanel {
             int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to delete " + tableModel.getValueAt(table.getSelectedRow(), 0) + "?", "DELETE USER", JOptionPane.YES_NO_OPTION);
             
             if (result == JOptionPane.YES_OPTION) {
-                System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
-                sqlite.removeUser(table.getValueAt(table.getSelectedRow(),0) + "");
+                //System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
+                User user = sqlite.getUser(table.getValueAt(table.getSelectedRow(),0) + "");
+                if(user.getRole() < 5){
+                    sqlite.removeUser(table.getValueAt(table.getSelectedRow(),0) + "");
+                }
+                else
+                    JOptionPane.showMessageDialog(null, "This user cannot be deleted.");
+                
                 init();
             }
         }
     }//GEN-LAST:event_deleteBtnActionPerformed
 
     private void lockBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lockBtnActionPerformed
+        User user = sqlite.getUser(tableModel.getValueAt(table.getSelectedRow(), 0) + "");
         if(table.getSelectedRow() >= 0){
             String state = "lock";
             if("1".equals(tableModel.getValueAt(table.getSelectedRow(), 3) + "")){
@@ -230,11 +240,13 @@ public class MgmtUser extends javax.swing.JPanel {
             int result = JOptionPane.showConfirmDialog(null, "Are you sure you want to " + state + " " + tableModel.getValueAt(table.getSelectedRow(), 0) + "?", "DELETE USER", JOptionPane.YES_NO_OPTION);
             
             if (result == JOptionPane.YES_OPTION) {
-                System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
+                //System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0));
                 if (state.equals("unlock"))
                     sqlite.unlockUser(tableModel.getValueAt(table.getSelectedRow(), 0) + "");
-                else
+                else if (user.getRole() < 5)
                     sqlite.lockUser(tableModel.getValueAt(table.getSelectedRow(), 0) + "");
+                else
+                    JOptionPane.showMessageDialog(null, "This user cannot be locked.");
                 init();
             }
         }
@@ -254,8 +266,8 @@ public class MgmtUser extends javax.swing.JPanel {
             int result = JOptionPane.showConfirmDialog(null, message, "CHANGE PASSWORD", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE, null);
             
             if (result == JOptionPane.OK_OPTION) {
-                System.out.println(password.getText());
-                System.out.println(confpass.getText());
+                //System.out.println(password.getText());
+                //System.out.println(confpass.getText());
                 if (password.getText().equals(confpass.getText())){
                 //    System.out.println("Match");
                 //    System.out.println(tableModel.getValueAt(table.getSelectedRow(), 0) + "");

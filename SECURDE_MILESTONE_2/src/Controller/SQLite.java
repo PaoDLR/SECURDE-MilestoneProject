@@ -40,7 +40,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL)) {
             if (conn != null) {
                 DatabaseMetaData meta = conn.getMetaData();
-                System.out.println("Database database.db created.");
+                if(DEBUG_MODE == 1)
+                    System.out.println("Database database.db created.");
             }
         } catch (Exception ex) {}
     }
@@ -57,7 +58,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Table history in database.db created.");
+            if(DEBUG_MODE == 1)
+                System.out.println("Table history in database.db created.");
         } catch (Exception ex) {}
     }
         
@@ -73,7 +75,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Table logs in database.db created.");
+            if(DEBUG_MODE == 1)
+                System.out.println("Table logs in database.db created.");
         } catch (Exception ex) {}
     }
         
@@ -88,7 +91,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Table product in database.db created.");
+            if(DEBUG_MODE == 1)
+                System.out.println("Table product in database.db created.");
         } catch (Exception ex) {}
     }
     
@@ -98,7 +102,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Table history in database.db dropped.");
+            if(DEBUG_MODE == 1)    
+                System.out.println("Table history in database.db dropped.");
         } catch (Exception ex) {}
     }
     
@@ -108,7 +113,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Table logs in database.db dropped.");
+            if(DEBUG_MODE == 1)
+                System.out.println("Table logs in database.db dropped.");
         } catch (Exception ex) {}
     }
     
@@ -118,7 +124,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Table product in database.db dropped.");
+            if(DEBUG_MODE == 1)
+                System.out.println("Table product in database.db dropped.");
         } catch (Exception ex) {}
     }
     
@@ -138,8 +145,8 @@ public class SQLite {
         ArrayList<History> history = new ArrayList<History>();
         history = getHistory();
         
-        for (int i=0;i<history.size();i++)
-            System.out.println(history.get(i).getUsername() + " - " + history.get(i).getName());
+//        for (int i=0;i<history.size();i++)
+//            System.out.println(history.get(i).getUsername() + " - " + history.get(i).getName());
     }
     
     public void addLogs(String event, String username, String desc, String timestamp) {
@@ -164,7 +171,8 @@ public class SQLite {
             pstmt.setInt(2, stock);
             pstmt.setDouble(3, price);
             pstmt.executeUpdate();
-        System.out.println("New product added: " + name);
+            if(DEBUG_MODE == 1)
+                System.out.println("New product added: " + name);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been added", new Object[]{new Timestamp(System.currentTimeMillis()), name});
             this.addLogs("ADD PRODUCT", name, "Product added " + name, new Timestamp(System.currentTimeMillis()).toString());
         } catch (Exception ex) {}
@@ -172,7 +180,8 @@ public class SQLite {
     
     public void editProduct(String oldname, String name, int stock, double price) {
         String sql = "UPDATE product SET name=?, stock=?, price=? WHERE name=?";
-        System.out.println(sql);
+        if(DEBUG_MODE == 1)
+            System.out.println(sql);
         
         try (Connection conn = DriverManager.getConnection(driverURL);
             PreparedStatement pstmt = conn.prepareStatement(sql);){
@@ -181,7 +190,8 @@ public class SQLite {
             pstmt.setDouble(3, price);
             pstmt.setString(4, oldname);
             pstmt.executeUpdate();
-            System.out.println("Product edited: " + name);
+            if(DEBUG_MODE == 1)
+                System.out.println("Product edited: " + name);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been edited", new Object[]{new Timestamp(System.currentTimeMillis()), name});
             this.addLogs("EDIT PRODUCT", name, "Product edited " + name, new Timestamp(System.currentTimeMillis()).toString());
         } catch (Exception ex) {}
@@ -194,7 +204,8 @@ public class SQLite {
             PreparedStatement pstmt = conn.prepareStatement(sql);){
             pstmt.setString(1, name);
             pstmt.executeUpdate();
-            System.out.println("Product deleted: " + name);
+            if(DEBUG_MODE == 1)
+                System.out.println("Product deleted: " + name);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Product {1} has been deleted", new Object[]{new Timestamp(System.currentTimeMillis()), name});
             this.addLogs("DELETE PRODUCT", name, "Product deleted " + name, new Timestamp(System.currentTimeMillis()).toString());
         } catch (Exception ex) {}
@@ -329,7 +340,8 @@ public class SQLite {
                 pstmt.setInt(1, currStock);
                 pstmt.setString(2, name);
                 pstmt.executeUpdate();
-                System.out.println("Product purchased: " + name + ", amount purchased: " + stock);
+                if(DEBUG_MODE == 1)
+                    System.out.println("Product purchased: " + name + ", amount purchased: " + stock);
                 Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Stock {2} of Product {1} has been purchased by " + this.loggedIn.getUsername(), new Object[]{new Timestamp(System.currentTimeMillis()), name, stock});
                 this.addLogs("BUY PRODUCT", name, "Product purchased: " + name + " by " + loggedIn.getUsername(), new Timestamp(System.currentTimeMillis()).toString());
             } catch (Exception ex) {}
@@ -350,7 +362,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Table users in database.db created.");
+            if(DEBUG_MODE == 1)
+                System.out.println("Table users in database.db created.");
         } catch (Exception ex) {}
     }
     
@@ -360,7 +373,8 @@ public class SQLite {
         try (Connection conn = DriverManager.getConnection(driverURL);
             Statement stmt = conn.createStatement()) {
             stmt.execute(sql);
-            System.out.println("Table users in database.db dropped.");
+            if(DEBUG_MODE == 1)
+                System.out.println("Table users in database.db dropped.");
         } catch (Exception ex) {}
     }
     
@@ -433,7 +447,8 @@ public class SQLite {
             PreparedStatement pstmt = conn.prepareStatement(sql);) {
             pstmt.setString(1, username);
             pstmt.executeUpdate();
-            System.out.println("User " + username + " has been deleted.");
+            if(DEBUG_MODE == 1)
+                System.out.println("User " + username + " has been deleted.");
         } catch (Exception ex) {}
     }
     
@@ -445,7 +460,8 @@ public class SQLite {
             pstmt.setInt(1, Integer.parseInt(role + ""));
             pstmt.setString(2, username);
             pstmt.executeUpdate();
-            System.out.println("Role of " + username + " updated to " + role);
+            if(DEBUG_MODE == 1)
+                System.out.println("Role of " + username + " updated to " + role);
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Role of account {1} has been updated to {2}", new Object[]{new Timestamp(System.currentTimeMillis()), username, role});
             this.addLogs("EDIT ROLE - " + role, username, "Role has been modified to " + role, new Timestamp(System.currentTimeMillis()).toString());
         } catch (Exception ex) {}
@@ -464,7 +480,8 @@ public class SQLite {
                     pstmt.setString(1, encrypt);
                     pstmt.setString(2, username);
                     pstmt.executeUpdate();
-                    System.out.println("Password of " + username + " updated");
+                    if(DEBUG_MODE == 1)
+                        System.out.println("Password of " + username + " updated");
                     Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Password of account {1} has been updated", new Object[]{new Timestamp(System.currentTimeMillis()), username});
                     this.addLogs("EDIT PASSWORD", username, "Password of " + username + " modified", new Timestamp(System.currentTimeMillis()).toString());
                 } catch (Exception ex) {}
@@ -490,7 +507,8 @@ public class SQLite {
             pstmt.setInt(1, 1);
             pstmt.setString(2, username);
             pstmt.executeUpdate();
-            System.out.println("User " + username + " has been locked.");
+            if(DEBUG_MODE == 1)
+                System.out.println("User " + username + " has been locked.");
         } catch (Exception ex) {}
     }
     
@@ -502,7 +520,8 @@ public class SQLite {
             pstmt.setInt(1, 0);
             pstmt.setString(2, username);
             pstmt.executeUpdate();
-            System.out.println("User " + username + " has been unlocked.");
+            if(DEBUG_MODE == 1)
+                System.out.println("User " + username + " has been unlocked.");
         } catch (Exception ex) {}
     }
     
@@ -565,11 +584,14 @@ public class SQLite {
         else if (login == false){
             if (user != null ){
                 if (user.getTries() < 4){
-
-                    System.out.println("User: " + user.getUsername());
+                    if(DEBUG_MODE == 1)
+                        System.out.println("User: " + user.getUsername());
 
                     int tries = user.getTries() + 1;    
-                    System.out.println(tries);
+                    
+                    if(DEBUG_MODE == 1)
+                        System.out.println(tries);
+                    
                     this.setUserTries(user.getUsername(), tries);
 
                 }
@@ -586,8 +608,8 @@ public class SQLite {
             } else
                 return null;
         }
-            
-        System.out.println("loginUser: " + login);
+        if(DEBUG_MODE == 1)    
+            System.out.println("loginUser: " + login);
         
         if (login)
             loggedIn = user;
@@ -604,7 +626,8 @@ public class SQLite {
             pstmt.setInt(1, tries);
             pstmt.setString(2, username);
             pstmt.executeUpdate();
-            System.out.println("Tries: " + tries);
+            if(DEBUG_MODE == 1)
+                System.out.println("Tries: " + tries);
         } catch (Exception ex) {}
         
     }
@@ -642,7 +665,8 @@ public class SQLite {
                 user = new User(rs.getString("username"),
                                        rs.getString("password"),
                                        rs.getInt("role"));
-            System.out.println("In getUser: " + user.getUsername());
+            if(DEBUG_MODE == 1)
+                System.out.println("In getUser: " + user.getUsername());
         } catch (Exception ex) {}
         return user;
     }
@@ -671,31 +695,38 @@ public class SQLite {
                 JOptionPane.showMessageDialog(null, "User successfully created");
                 
                 ArrayList<User> users2 = getUsers();
-                for(int nCtr = 0; nCtr < users2.size(); nCtr++){
-                    System.out.println("===== User " + users2.get(nCtr).getId() + " =====");
-                    System.out.println(" Username: " + users2.get(nCtr).getUsername());
-                    System.out.println(" Password: " + users2.get(nCtr).getPassword());
-                    System.out.println(" Role: " + users2.get(nCtr).getRole());
+                if(DEBUG_MODE == 1)
+                    for(int nCtr = 0; nCtr < users2.size(); nCtr++){
+                        System.out.println("===== User " + users2.get(nCtr).getId() + " =====");
+                        System.out.println(" Username: " + users2.get(nCtr).getUsername());
+                        System.out.println(" Password: " + users2.get(nCtr).getPassword());
+                        System.out.println(" Role: " + users2.get(nCtr).getRole());
 
-                }
+                    }
                 
                 }//checkString
                 else{
+                    JOptionPane.showMessageDialog(null, "Register User Failed!");
                     //System.out.println("Password must contain at least one capital letter and one number");
-                    System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - password complexity");
+                    if(DEBUG_MODE == 1)
+                        System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - password complexity");
                     Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
                     this.addLogs("REGISTER FAIL", username, "Register attempt failed, password complexity", new Timestamp(System.currentTimeMillis()).toString());
                 }
             }//special
             else{
-                System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - password topology");
+                 JOptionPane.showMessageDialog(null, "Register User Failed!");
+                if(DEBUG_MODE == 1)
+                    System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - password topology");
                 Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
                 this.addLogs("REGISTER FAIL", username, "Register attempt failed, password topology", new Timestamp(System.currentTimeMillis()).toString());
             }
         }//found
         else{ 
+             JOptionPane.showMessageDialog(null, "Register User Failed!");
 //            System.out.println("This user already exists.");
-            System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - user exists");
+            if(DEBUG_MODE == 1)
+                System.out.println(new Timestamp(System.currentTimeMillis()) + " Register attempt from user " + username + " failed - user exists");
             Logger.getLogger(Frame.class.getName()).log(Level.INFO, "{0} Register attempt with username {1} failed", new Object[]{new Timestamp(System.currentTimeMillis()), username});
             this.addLogs("REGISTER FAIL", username, "Register attempt failed, user already exists", new Timestamp(System.currentTimeMillis()).toString());
             JOptionPane.showMessageDialog(null, "Please choose a unique username");

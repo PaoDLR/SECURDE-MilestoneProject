@@ -19,6 +19,7 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+import javax.swing.JOptionPane;
 
 public class Frame extends javax.swing.JFrame {
     
@@ -395,7 +396,9 @@ public class Frame extends javax.swing.JFrame {
             
             return true;
         }
-        else
+        else{
+            JOptionPane.showMessageDialog(null, "Register User Failed!");
+        }
 //            System.out.println("Passwords do not match.");
 //          System.out.println(new Timestamp(System.currentTimeMillis()) + "Register attempt failed - passwords do not match");
 //        main.sqlite.addUser(username, password);

@@ -42,7 +42,7 @@ public class PasswordUtils {
     public boolean bContainsSpecialCharacter(String s) {
         
          if (s == null || s.trim().isEmpty()) {
-             System.out.println("Incorrect format of string");
+             //System.out.println("Incorrect format of string");
              return false;
          }
          
@@ -80,7 +80,8 @@ public class PasswordUtils {
             }
         }
         else
-            System.out.println("Password should be 8 characters long or more.");
+            return false;
+            //System.out.println("Password should be 8 characters long or more.");
         
         return false;
     }

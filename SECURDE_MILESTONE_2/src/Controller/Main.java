@@ -37,15 +37,16 @@ public class Main {
         
         // Get users
         ArrayList<User> users = sqlite.getUsers();
-        for(int nCtr = 0; nCtr < users.size(); nCtr++){
-            System.out.println("===== User " + users.get(nCtr).getId() + " =====");
-            System.out.println(" Username: " + users.get(nCtr).getUsername());
-            System.out.println(" Password: " + users.get(nCtr).getPassword());
-            System.out.println(" Role: " + users.get(nCtr).getRole());
-            System.out.println(" Locked: " + users.get(nCtr).isLockout());
-            System.out.println(" Tries: " + users.get(nCtr).getTries());
+        if(sqlite.DEBUG_MODE == 1)
+            for(int nCtr = 0; nCtr < users.size(); nCtr++){
+                System.out.println("===== User " + users.get(nCtr).getId() + " =====");
+                System.out.println(" Username: " + users.get(nCtr).getUsername());
+                System.out.println(" Password: " + users.get(nCtr).getPassword());
+                System.out.println(" Role: " + users.get(nCtr).getRole());
+                System.out.println(" Locked: " + users.get(nCtr).isLockout());
+                System.out.println(" Tries: " + users.get(nCtr).getTries());
             
-        }
+            }
         
         sqlite.createProductTable();
         sqlite.createLogsTable();
